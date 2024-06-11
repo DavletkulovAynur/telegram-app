@@ -1,0 +1,20 @@
+.points {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 12px;
+  margin-top: 20px;
+}
+
+.point {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--yy-primary-main);
+  border: 3px solid var(--yy-primary-light);
+}
+
+.line {
+  height: 32px;
+  border: 0.5px dotted var(--yy-action-active);
+}

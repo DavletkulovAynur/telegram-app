@@ -1,0 +1,38 @@
+.minifiedRouteWrapper {
+  max-width: 420px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.paper {
+  width: 100%;
+  padding: 12px 24px 24px;
+}
+
+.formButton {
+  width: 100%;
+  margin-top: 16px;
+}
+
+.formWrapper {
+  display: inline-flex;
+  align-items: center;
+  width: 100%;
+}
+
+.title {
+  position: relative;
+  top: 8px;
+  padding: 4px 0;
+
+  &:last-child {
+    top: 16px;
+  }
+}
+
+.loader {
+  padding-top: 12px;
+}

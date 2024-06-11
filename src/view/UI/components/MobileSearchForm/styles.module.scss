@@ -1,0 +1,81 @@
+.mobileContainer {
+  border-radius: 20px;
+  padding: 12px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  // background-color: #fff;
+}
+
+// localities
+.localitiesContainer {
+  padding: 0 12px;
+}
+
+.localities {
+  margin-top: 12px;
+  overflow: scroll;
+}
+
+.test {
+  width: 10%;
+}
+
+.test2 {
+  width: 90%;
+}
+.localitiesDistrict {
+  color: var(--yy-grey-500);
+  font-size: 10px;
+}
+
+.locality {
+  display: flex;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--yy-grey-300);
+}
+
+.localityDescription {
+  margin-left: 12px;
+}
+
+//НЕТ переменной
+.darkThemeContainer {
+  background: var(--yy-background-paper) !important;
+}
+
+.line {
+  width: 100%;
+  height: 1px;
+  border: 1px solid var(--yy-grey-300);
+}
+
+.localityWrap {
+  padding: 6px 6px;
+  color: var(--yy-grey-500);
+  margin: 6px 0;
+}
+
+.localityWrapError {
+  background: var(--yy-error-light);
+  border-radius: 2px;
+}
+
+.localityName {
+  color: var(--yy-text-primary);
+  font-size: 16px;
+  font-weight: bold;
+}
+// --- //
+
+.loaderContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.button {
+  margin-top: 12px;
+}

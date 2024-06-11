@@ -1,0 +1,30 @@
+.formWrapper {
+  display: inline-flex;
+  align-items: center;
+  width: 100%;
+  padding: 12px 24px 24px;
+  margin-bottom: 12px;
+}
+
+.wrapper {
+  max-width: 420px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.formActions {
+  display: flex;
+  width: 100%;
+
+  button {
+    flex: 1;
+    margin-right: 16px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

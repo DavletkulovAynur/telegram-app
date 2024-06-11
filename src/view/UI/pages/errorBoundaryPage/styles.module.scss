@@ -1,0 +1,44 @@
+.appWrapper {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  height: 100%;
+}
+
+.errorBoundary {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+}
+
+.icon {
+  line-height: 0;
+  font-size: 200px;
+}
+
+.collapse {
+  max-width: 100%;
+  word-break: break-word;
+}
+
+.collapseTitle {
+  cursor: pointer;
+}
+
+.notConnectText {
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 24px;
+  text-align: center;
+  z-index: 1101;
+  width: 70%;
+  min-width: 280px;
+  margin: 0 auto;
+  border-radius: 0 0 8px 8px;
+  color: var(--yy-common-white);
+  background-color: var(--yy-error-main);
+}

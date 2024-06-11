@@ -1,0 +1,13 @@
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.logoButton {
+  padding: 0;
+  border-radius: 4px;
+
+  img {
+    border-radius: 4px;
+  }
+}

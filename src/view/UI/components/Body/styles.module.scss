@@ -1,0 +1,17 @@
+$gap: 16px;
+
+.bodyWrapper {
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  padding: 0 8px;
+  //FIXME:
+  background: #fff;
+}
+
+.header {
+  padding: 12px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
