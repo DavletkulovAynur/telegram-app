@@ -42,13 +42,14 @@
 
 //НЕТ переменной
 .darkThemeContainer {
-  background: var(--yy-background-paper) !important;
+  background: var(red) !important;
 }
 
 .line {
   width: 100%;
-  height: 1px;
-  border: 1px solid var(--yy-grey-300);
+  height: 3px;
+  background: red;
+  // border: 1px solid var(--yy-grey-300);
 }
 
 .localityWrap {
@@ -67,6 +68,11 @@
   font-size: 16px;
   font-weight: bold;
 }
+
+.notMarkedLocalityName {
+  font-size: 16px;
+  font-weight: bold;
+}
 // --- //
 
 .loaderContainer {
@@ -78,4 +84,10 @@
 
 .button {
   margin-top: 12px;
+}
+
+.testWrap {
+  display: flex;
+  font-size: 16px;
+  font-weight: bold;
 }

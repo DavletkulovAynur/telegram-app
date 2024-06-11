@@ -13,6 +13,7 @@ import {
   POINT_PLACEHOLDER,
 } from "./types";
 import SearchIcon from "@mui/icons-material/Search";
+import Typewriter from "./Typewriter";
 
 const FormLocalityName: FC<IFormLocalityName> = ({
   toggleLocationLayer,
@@ -32,7 +33,25 @@ const FormLocalityName: FC<IFormLocalityName> = ({
       className={wrapperClassName}
     >
       <span className={(ID && css.localityName) || ""}>{ID && pointName}</span>
-      {!ID && <span>{placeholderHTML}</span>}
+      {!ID && typePoint === TYPE_POINT.origin && (
+        <span className={css.notMarkedLocalityName}>{placeholderHTML}</span>
+      )}
+      {!ID && typePoint === TYPE_POINT.destination && (
+        <div className={css.testWrap}>
+          Куда&nbsp;-&nbsp;
+          <Typewriter
+            texts={[
+              "Сибай",
+              "Аъяр",
+              "Санкт-Петербург",
+              "Новосибирск",
+              "Екатеринбург",
+            ]}
+            speed={100}
+            pause={5000}
+          />
+        </div>
+      )}
     </div>
   );
 };
@@ -95,7 +114,7 @@ const MobileForm: FC<IMobileFormProps> = ({
             placeholderHTML={POINT_PLACEHOLDER.origin}
             error={originError}
           />
-          <hr className="line" />
+          <hr className={css.line} />
           <FormLocalityName
             toggleLocationLayer={toggleLocationLayer}
             typePoint={TYPE_POINT.destination}
@@ -106,17 +125,6 @@ const MobileForm: FC<IMobileFormProps> = ({
           />
         </div>
       </Paper>
-
-      {/* <div className={css.button}>
-        <Button
-          onClick={handleSubmit(onSubmit)}
-          fullWidth
-          variant="contained"
-          size="large"
-        >
-          Найти
-        </Button>
-      </div> */}
 
       {[TYPE_POINT.origin, TYPE_POINT.destination].map((type) => (
         <SearchLocality
