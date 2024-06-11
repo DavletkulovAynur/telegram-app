@@ -1,6 +1,6 @@
 import React, { FC, useEffect, useState } from "react";
-import { Button, Paper } from "@mui/material";
-import { useForm, SubmitHandler } from "react-hook-form";
+import { Paper } from "@mui/material";
+import { useForm } from "react-hook-form";
 import css from "./styles.module.scss";
 import SearchLocality from "./SearchLocality";
 import { ILocalityEntity } from "../../../../data/Locality";
@@ -43,7 +43,7 @@ const MobileForm: FC<IMobileFormProps> = ({
   loading,
   onSearch,
 }) => {
-  const { handleSubmit, setValue, getValues } = useForm<IFormData>();
+  const { setValue, getValues } = useForm<IFormData>();
   const originId = getValues("originId");
   const destinationId = getValues("destinationId");
   const [originError, setOriginError] = useState(false);
