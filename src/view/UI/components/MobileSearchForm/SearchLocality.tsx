@@ -63,6 +63,7 @@ const SearchLocality: FC<ISearchLocality> = ({
     };
   }, []);
 
+  console.log('localities', localities)
   return (
     <Sheet
       rootId="root"

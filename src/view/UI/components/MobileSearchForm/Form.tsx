@@ -70,7 +70,7 @@ const MobileForm: FC<IMobileFormProps> = ({
   const [isOriginModalOpen, setIsOriginModalOpen] = useState(false);
   const [isToModalOpen, setIsToModalOpen] = useState(false);
   const [pointName, setPointName] = useState({
-    origin: null,
+    origin: null as string | null,
     destination: null,
   });
 
@@ -80,6 +80,16 @@ const MobileForm: FC<IMobileFormProps> = ({
       onSearch({ originId, destinationId });
     }
   }, [originId, destinationId]);
+
+  //FIXME: хардкод, исправить в первую очередь
+  //TODO: при изменение базы данных тут поменять наименования
+  useEffect(() => {
+    setValue("originId", "2");
+    setOriginError(false);
+    const updatedPointName = { ...pointName, origin: "Уфа" };
+    setPointName(updatedPointName);
+  }, []);
+  // ******* //
 
   const searchLocality = (event: React.ChangeEvent<HTMLInputElement>) => {
     getList(event.target.value);
@@ -114,7 +124,7 @@ const MobileForm: FC<IMobileFormProps> = ({
             placeholderHTML={POINT_PLACEHOLDER.origin}
             error={originError}
           />
-          <hr className={css.line} />
+          <div className={css.line} />
           <FormLocalityName
             toggleLocationLayer={toggleLocationLayer}
             typePoint={TYPE_POINT.destination}

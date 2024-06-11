@@ -43,16 +43,15 @@
   margin-left: 12px;
 }
 
-//НЕТ переменной
+//FIXME: НЕТ переменной
 .darkThemeContainer {
   background: var(red) !important;
 }
 
 .line {
   width: 100%;
-  height: 3px;
-  background: red;
-  // border: 1px solid var(--yy-grey-300);
+  height: 1px;
+  background-color: var(--tg-theme-hint-color, var(--yy-grey-400));
 }
 
 .localityWrap {
