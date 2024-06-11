@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 interface TypewriterProps {
     texts: string[];
@@ -8,14 +8,17 @@ interface TypewriterProps {
 
 const Typewriter: React.FC<TypewriterProps> = ({ texts, speed = 100, pause = 2000 }) => {
     const [displayedText, setDisplayedText] = useState('');
-    // const [index, setIndex] = useState(0);
     const [subIndex, setSubIndex] = useState(0);
     const [deleting, setDeleting] = useState(false);
     const [loop, setLoop] = useState(0);
 
     useEffect(() => {
+        if (texts.length === 0) return;
+
+        // Ensure loop index is within bounds
         if (loop >= texts.length) {
             setLoop(0);
+            return;
         }
 
         if (!deleting && subIndex < texts[loop].length) {
@@ -26,7 +29,7 @@ const Typewriter: React.FC<TypewriterProps> = ({ texts, speed = 100, pause = 200
             return () => clearTimeout(timeout);
         } else if (deleting && subIndex > 0) {
             const timeout = setTimeout(() => {
-                setDisplayedText((prev) => prev.slice(0, prev.length - 1));
+                setDisplayedText((prev) => prev.slice(0, -1));
                 setSubIndex((prev) => prev - 1);
             }, speed);
             return () => clearTimeout(timeout);

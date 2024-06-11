@@ -2,14 +2,12 @@
 
 //FIXME: color
 .page {
-  // position: relative;
-  // display: flex;
-  // flex-direction: column;
-  // justify-content: center;
-  // align-items: center;
   width: 100%;
-  // height: 100%;
-  background: #89cffb ;
+  // background: #232323;
+  background-color: var(
+    --tg-theme-secondary-bg-color,
+    var(--yy-background-paper)
+  );
   padding: 0 8px;
   padding-top: 32px;
   padding-bottom: 16px;

@@ -5,8 +5,7 @@ $gap: 16px;
   width: 100%;
   overflow: auto;
   padding: 0 8px;
-  //FIXME:
-  background-color: var(--tg-theme-bg-color, red);
+  background-color: var(--tg-theme-bg-color, var(--yy-background-default));
 }
 
 .header {

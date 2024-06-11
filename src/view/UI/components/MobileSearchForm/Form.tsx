@@ -48,7 +48,7 @@ const FormLocalityName: FC<IFormLocalityName> = ({
               "Екатеринбург",
             ]}
             speed={100}
-            pause={5000}
+            pause={1000}
           />
         </div>
       )}
