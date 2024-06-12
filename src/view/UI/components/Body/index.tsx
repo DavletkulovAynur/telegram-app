@@ -9,10 +9,29 @@ const Body: FC<PropsWithChildren> = ({ children }) => {
   useEffect(() => {
     if (!tg) return;
     tg.ready();
+    // Используйте цвет из themeParams для установки цвета заголовка
+    const headerColor = tg.initDataUnsafe.themeParams.secondary_bg_color;
+    tg.setHeaderColor(headerColor);
 
     // Настройка основной кнопки при первой загрузке
     tg.MainButton.setText("Главная");
     tg.MainButton.show();
+  }, []);
+
+  useEffect(() => {
+    if (!tg) return;
+    tg.ready();
+
+    // Изменить текст кнопки возврата
+    tg.BackButton.setText("Back");
+    tg.BackButton.show();
+
+    // Обработчик нажатия на кнопку "Back"
+    tg.BackButton.onClick(() => {
+      // Ваш код для возврата на предыдущую страницу
+      alert("Возврат на предыдущую страницу");
+      tg.BackButton.hide();
+    });
   }, []);
   return (
     <div className={css.bodyWrapper}>

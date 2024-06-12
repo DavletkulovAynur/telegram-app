@@ -1,6 +1,18 @@
 // global.d.ts
+// global.d.ts
+interface ThemeParams {
+  secondary_bg_color: string;
+}
+
 export interface TelegramWebApp {
   ready: () => void;
+  initDataUnsafe: {
+    user: {
+      first_name: string;
+      last_name: string;
+    };
+    themeParams: ThemeParams;
+  };
   MainButton: {
     setText: (text: string) => void;
     show: () => void;
@@ -12,15 +24,14 @@ export interface TelegramWebApp {
     onClick: (callback: () => void) => void;
     hide: () => void;
   };
+  setHeaderColor: (color: string) => void;
   sendData: (data: string) => void;
   close: () => void;
-  initDataUnsafe: {
-    user: {
-      first_name: string;
-      last_name: string;
-    };
-  };
-  showPopup: (params: { title: string; message: string; buttons: Array<{ id: string; type: string }> }) => void;
+  showPopup: (params: {
+    title: string;
+    message: string;
+    buttons: Array<{ id: string; type: string }>;
+  }) => void;
 }
 
 declare global {
