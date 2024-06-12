@@ -10,8 +10,8 @@ const Body: FC<PropsWithChildren> = ({ children }) => {
     if (!tg) return;
     tg.ready();
     // Используйте цвет из themeParams для установки цвета заголовка
-    const headerColor = tg.initDataUnsafe.themeParams.secondary_bg_color;
-    tg.setHeaderColor(headerColor);
+    // const headerColor = tg.initDataUnsafe.themeParams.secondary_bg_color;
+    tg.setHeaderColor("#000");
 
     // Настройка основной кнопки при первой загрузке
     tg.MainButton.setText("Главная");
