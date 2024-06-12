@@ -32,9 +32,11 @@
     "react-modal-sheet": "^2.2.0",
     "react-phone-number-input": "^3.3.7",
     "react-router5": "^8.0.1",
+    "react-slick": "^0.30.2",
     "router5": "^8.0.1",
     "router5-plugin-browser": "^8.0.1",
-    "sass": "^1.69.5"
+    "sass": "^1.69.5",
+    "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^6.2.0",
@@ -42,6 +44,7 @@
     "@types/jest": "^29.5.11",
     "@types/react": "^18.2.37",
     "@types/react-dom": "^18.2.15",
+    "@types/react-slick": "^0.23.13",
     "@typescript-eslint/eslint-plugin": "^6.10.0",
     "@typescript-eslint/parser": "^6.10.0",
     "@vitejs/plugin-react": "^4.2.0",

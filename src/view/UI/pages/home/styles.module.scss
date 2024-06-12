@@ -40,6 +40,30 @@
     display: block;
   }
 }
+//
+.tgBgSecondary {
+  background-color: var(
+    --tg-theme-secondary-bg-color,
+    var(--yy-background-paper)
+  );
+  width: 100px;
+  height: 100px;
+}
+
+.tgBgMain {
+  background-color: var(--tg-theme-bg-color, var(--yy-background-paper));
+  width: 100px;
+  height: 100px;
+}
+
+.tgBgSection {
+  background-color: var(
+    --tg-theme-section-bg-color,
+    var(--yy-background-paper)
+  );
+  width: 100px;
+  height: 100px;
+}
 
 //slider
 .sliderWrap {
@@ -58,6 +82,7 @@
   overflow-x: auto; /* Enable horizontal scrolling */
   scroll-behavior: smooth; /* Smooth scrolling */
   gap: 10px; /* Space between images */
+  -webkit-overflow-scrolling: touch;
 }
 
 .imagesWrap::-webkit-scrollbar {

@@ -8,6 +8,7 @@ import { useViewModel } from "../../hooks";
 import { observer } from "mobx-react-lite";
 import { ECategories } from "../../../../libs";
 import { MobileForm } from "../../components/MobileSearchForm";
+import Slider from "react-slick";
 
 //
 import sp1 from "../../assets/testImg/sp1.jpeg";
@@ -21,6 +22,14 @@ const Home: FC = observer(() => {
 
   const handleSearch: SubmitHandler<IFormData> = (data) => {
     navigate("orders", data);
+  };
+
+  const settings = {
+    dots: false,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
   };
 
   return (
@@ -44,17 +53,21 @@ const Home: FC = observer(() => {
           />
         </div>
       </div>
-
+      <div>
+        <div className={css.tgBgSecondary}>1</div>
+        <div className={css.tgBgMain}>2</div>
+        <div className={css.tgBgSection}>3</div>
+      </div>
       {/* слайдер */}
       <div className={css.sliderWrap}>
         <h2>Интересные места</h2>
         <div>Башкортостан</div>
-        <div className={css.imagesWrap}>
+        <Slider {...settings}>
           <img className={css.image} src={sp3} alt="" />
           <img className={css.image} src={sp4} alt="" />
           <img className={css.image} src={sp1} alt="" />
           <img className={css.image} src={sp2} alt="" />
-        </div>
+        </Slider>
       </div>
     </>
   );
