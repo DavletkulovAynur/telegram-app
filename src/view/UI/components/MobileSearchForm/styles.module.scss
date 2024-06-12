@@ -104,3 +104,39 @@
   display: flex;
   justify-content: center;
 }
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3; /* высокий z-index для модального оверлея */
+}
+
+.modal {
+  // opacity: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white; /* цвет фона модального окна */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 4; /* еще более высокий z-index для модального окна */
+  animation: ani 0.4s forwards;
+}
+
+@keyframes ani {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}

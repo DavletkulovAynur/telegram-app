@@ -15,6 +15,7 @@ import {
 import SearchIcon from "@mui/icons-material/Search";
 import Typewriter from "./Typewriter";
 import logo from "../../assets/logo.png";
+import LocalitiesPage from "./localitiesPage";
 
 const FormLocalityName: FC<IFormLocalityName> = ({
   toggleLocationLayer,
@@ -68,12 +69,15 @@ const MobileForm: FC<IMobileFormProps> = ({
   const destinationId = getValues("destinationId");
   const [originError, setOriginError] = useState(false);
   const [destinationError, setDestinationError] = useState(false);
-  const [isOriginModalOpen, setIsOriginModalOpen] = useState(false);
-  const [isToModalOpen, setIsToModalOpen] = useState(false);
+  const [isOriginModalOpen] = useState(false);
+  const [isToModalOpen] = useState(false);
   const [pointName, setPointName] = useState({
     origin: null as string | null,
     destination: null,
   });
+
+  //FIXME:
+  const [modalLocalities, setModalLocalities] = useState(false);
 
   //FIXME: отправка формы только все поля будут заполнены
   useEffect(() => {
@@ -96,11 +100,11 @@ const MobileForm: FC<IMobileFormProps> = ({
     getList(event.target.value);
   };
 
+  //TODO: открываем слой
   const toggleLocationLayer = (type: TPoint) => {
     getList();
-    type === TYPE_POINT.origin
-      ? setIsOriginModalOpen(!isOriginModalOpen)
-      : setIsToModalOpen(!isToModalOpen);
+    console.log(type);
+    setModalLocalities(true);
   };
 
   const setLocation = (locality: ILocalityEntity, type: TPoint) => {
@@ -123,6 +127,7 @@ const MobileForm: FC<IMobileFormProps> = ({
           alt="logo"
         />
       </div>
+      <LocalitiesPage isOpen={modalLocalities} />
       <Paper elevation={0} className={css.mobileContainer}>
         <SearchIcon fontSize="large" />
         <div className={css.test2}>
