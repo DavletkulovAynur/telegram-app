@@ -53,11 +53,11 @@ const Home: FC = observer(() => {
           />
         </div>
       </div>
-      <div>
+      {/* <div>
         <div className={css.tgBgSecondary}>1</div>
         <div className={css.tgBgMain}>2</div>
         <div className={css.tgBgSection}>3</div>
-      </div>
+      </div> */}
       {/* слайдер */}
       <div className={css.sliderWrap}>
         <h2>Интересные места</h2>
