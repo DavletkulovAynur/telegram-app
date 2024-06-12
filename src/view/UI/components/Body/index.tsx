@@ -1,9 +1,19 @@
-import { FC, PropsWithChildren } from "react";
+import { FC, PropsWithChildren, useEffect } from "react";
 import css from "./styles.module.scss";
 import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import Person2OutlinedIcon from "@mui/icons-material/Person2Outlined";
+import { useTelegram } from "../../hooks";
 const Body: FC<PropsWithChildren> = ({ children }) => {
+  const tg = useTelegram();
 
+  useEffect(() => {
+    if (!tg) return;
+    tg.ready();
+
+    // Настройка основной кнопки при первой загрузке
+    tg.MainButton.setText("Главная");
+    tg.MainButton.show();
+  }, []);
   return (
     <div className={css.bodyWrapper}>
       <header className={css.header}>
