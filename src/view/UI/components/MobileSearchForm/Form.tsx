@@ -14,6 +14,7 @@ import {
 } from "./types";
 import SearchIcon from "@mui/icons-material/Search";
 import Typewriter from "./Typewriter";
+import logo from "../../assets/logo.png";
 
 const FormLocalityName: FC<IFormLocalityName> = ({
   toggleLocationLayer,
@@ -113,6 +114,15 @@ const MobileForm: FC<IMobileFormProps> = ({
 
   return (
     <>
+      <div className={css.logoWrap}>
+        <img
+          height={50}
+          width={50}
+          className={css.logo}
+          src={logo}
+          alt="logo"
+        />
+      </div>
       <Paper elevation={0} className={css.mobileContainer}>
         <SearchIcon fontSize="large" />
         <div className={css.test2}>

@@ -1,11 +1,7 @@
 import { FC, PropsWithChildren } from "react";
 import css from "./styles.module.scss";
-import SettingsIcon from "@mui/icons-material/Settings";
-// import LightModeRoundedIcon from "@mui/icons-material/LightModeRounded";
-// import { IconButton } from "@mui/material";
-// import NightsStayRoundedIcon from "@mui/icons-material/NightsStayRounded";
-// import { useChangeTheme } from "../../hooks";
-
+import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
+import Person2OutlinedIcon from "@mui/icons-material/Person2Outlined";
 const Body: FC<PropsWithChildren> = ({ children }) => {
   // const { theme, setTheme } = useChangeTheme();
 
@@ -17,14 +13,13 @@ const Body: FC<PropsWithChildren> = ({ children }) => {
   return (
     <div className={css.bodyWrapper}>
       <header className={css.header}>
-        <SettingsIcon fontSize="large" />
-        {/* <IconButton onClick={handleChangeTheme}>
-          {theme === "dark" ? (
-            <LightModeRoundedIcon />
-          ) : (
-            <NightsStayRoundedIcon color="action" />
-          )}
-        </IconButton> */}
+        <div className={css.iconWrap}>
+          <SettingsOutlinedIcon fontSize="medium" />
+        </div>
+
+        <div className={css.iconWrap}>
+          <Person2OutlinedIcon fontSize="medium" />
+        </div>
       </header>
       <div>{children}</div>
     </div>
