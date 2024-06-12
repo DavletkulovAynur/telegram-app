@@ -22,8 +22,6 @@ const Body: FC<PropsWithChildren> = ({ children }) => {
     if (!tg) return;
     tg.ready();
 
-    // Изменить текст кнопки возврата
-    tg.BackButton.setText("Back");
     tg.BackButton.show();
 
     // Обработчик нажатия на кнопку "Back"
