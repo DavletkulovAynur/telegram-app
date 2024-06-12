@@ -6,9 +6,14 @@ import { IFormData } from "../../components/SearchForm/types";
 import css from "./styles.module.scss";
 import { useViewModel } from "../../hooks";
 import { observer } from "mobx-react-lite";
-// import { AddAgencyChip } from "../../components/AddAgencyChip";
 import { ECategories } from "../../../../libs";
 import { MobileForm } from "../../components/MobileSearchForm";
+
+//
+import sp1 from "../../assets/testImg/sp1.jpeg";
+import sp2 from "../../assets/testImg/sp5.jpeg";
+import sp3 from "../../assets/testImg/sp3.jpeg";
+import sp4 from "../../assets/testImg/sp4.jpeg";
 
 const Home: FC = observer(() => {
   const { navigate } = useRouter();
@@ -20,6 +25,7 @@ const Home: FC = observer(() => {
 
   return (
     <>
+      {/* TODO:назвать класс по другому так как это не page */}
       <div className={css.page}>
         <div className={css.desktop}>
           <SearchForm
@@ -38,7 +44,18 @@ const Home: FC = observer(() => {
           />
         </div>
       </div>
-      {/* <AddAgencyChip /> */}
+
+      {/* слайдер */}
+      <div className={css.sliderWrap}>
+        <h2>Интересные места</h2>
+        <div>Башкортостан</div>
+        <div className={css.imagesWrap}>
+          <img className={css.image} src={sp3} alt="" />
+          <img className={css.image} src={sp4} alt="" />
+          <img className={css.image} src={sp1} alt="" />
+          <img className={css.image} src={sp2} alt="" />
+        </div>
+      </div>
     </>
   );
 });

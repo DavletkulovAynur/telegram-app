@@ -3,12 +3,6 @@ import css from "./styles.module.scss";
 import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import Person2OutlinedIcon from "@mui/icons-material/Person2Outlined";
 const Body: FC<PropsWithChildren> = ({ children }) => {
-  // const { theme, setTheme } = useChangeTheme();
-
-  // const handleChangeTheme = () => {
-  //   // changeThemeEvent();
-  //   setTheme(theme === "dark" ? "light" : "dark");
-  // };
 
   return (
     <div className={css.bodyWrapper}>

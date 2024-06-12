@@ -7,9 +7,9 @@
   --yy-secondary-light: rgb(175, 154, 236);
   --yy-secondary-dark: rgb(109, 90, 162);
   --yy-secondary-contrast-text: #fff;
-  --yy-background-default: #f2f6f6;
-  --yy-background-paper: #fff;
-  --yy-background-section: #f5f5f5;
+  --yy-background-default: #f7f7f7 ;
+  --yy-background-paper: #fff2f2;
+  --yy-background-section: #fff;
   --yy-common-black: #000;
   --yy-common-white: #fff;
   --yy-error-main: #d32f2f;

@@ -3,7 +3,6 @@
 //FIXME: color
 .page {
   width: 100%;
-  // background: #232323;
   background-color: var(
     --tg-theme-secondary-bg-color,
     var(--yy-background-paper)
@@ -40,4 +39,40 @@
   .mobile {
     display: block;
   }
+}
+
+//slider
+.sliderWrap {
+  margin-top: 20px;
+  background-color: var(
+    --tg-theme-section-bg-color,
+    var(--yy-background-section)
+  );
+  border-radius: 20px;
+  padding: 10px;
+  overflow-x: hidden; /* Hide the scrollbar */
+}
+
+.imagesWrap {
+  display: flex;
+  overflow-x: auto; /* Enable horizontal scrolling */
+  scroll-behavior: smooth; /* Smooth scrolling */
+  gap: 10px; /* Space between images */
+}
+
+.imagesWrap::-webkit-scrollbar {
+  display: none; /* Hide the scrollbar in Webkit browsers */
+}
+
+.imagesWrap {
+  -ms-overflow-style: none; /* Hide the scrollbar in IE and Edge */
+  scrollbar-width: none; /* Hide the scrollbar in Firefox */
+}
+
+.image {
+  flex-shrink: 0; /* Prevent images from shrinking */
+  width: 140px; /* Set a fixed width for images */
+  height: 140px; /* Maintain aspect ratio */
+  border-radius: 20px; /* Optional: Add some styling */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add some shadow */
 }
