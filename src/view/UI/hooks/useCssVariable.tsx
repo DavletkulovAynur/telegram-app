@@ -4,7 +4,7 @@ interface IProps {
   variableName: string;
 }
 const useCssVariable: FC<IProps> = ({ variableName }): string => {
-  const [value, setValue] = useState<string>("");
+  const [value, setValue] = useState<string>("#000");
 
   useEffect(() => {
     const root = document.documentElement;
