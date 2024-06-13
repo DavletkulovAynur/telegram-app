@@ -10,7 +10,7 @@ const useCssVariable: FC<IProps> = ({ variableName }): string => {
     const root = document.documentElement;
     const style = getComputedStyle(root);
     const variableValue = style.getPropertyValue(variableName).trim(); // trim для удаления возможных пробелов
-    setValue(variableValue || "");
+    setValue(variableValue || "#000");
   }, [variableName]);
 
   return value;
