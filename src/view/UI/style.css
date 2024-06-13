@@ -1,0 +1,7 @@
+
+body {
+  background-color: var(
+    --tg-theme-secondary-bg-color,
+    var(--yy-background-default)
+  );
+}

@@ -3,6 +3,7 @@ import { useRoute } from "react-router5";
 import { constants } from "router5";
 import { LoadingScreen } from "./components/LoadingScreen";
 import { ERouteNames } from "../../router/routes";
+import "./style.css";
 
 const HomePage = lazy(() => import("./pages/home"));
 const OrdersPage = lazy(() => import("./pages/orders"));
