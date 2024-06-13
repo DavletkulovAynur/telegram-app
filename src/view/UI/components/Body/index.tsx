@@ -18,7 +18,7 @@ const Body: FC<PropsWithChildren> = ({ children }) => {
     tg.ready();
 
     tg.BackButton.show();
-    tg.setHeaderColor(test as string);
+    tg.setHeaderColor(tg.themeParams.secondary_bg_color as string);
 
     // Обработчик нажатия на кнопку "Back"
     tg.BackButton.onClick(() => {

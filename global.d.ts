@@ -32,6 +32,9 @@ export interface TelegramWebApp {
     message: string;
     buttons: Array<{ id: string; type: string }>;
   }) => void;
+  themeParams: {
+    secondary_bg_color: string;
+  };
 }
 
 declare global {
