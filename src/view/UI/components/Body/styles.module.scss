@@ -1,5 +1,12 @@
 $gap: 16px;
 
+body {
+  background-color: var(
+    --tg-theme-secondary-bg-color,
+    var(--yy-background-default)
+  );
+}
+
 .bodyWrapper {
   height: 100%;
   width: 100%;
