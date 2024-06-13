@@ -15,7 +15,7 @@ import {
 import SearchIcon from "@mui/icons-material/Search";
 import Typewriter from "./Typewriter";
 import logo from "../../assets/logo.png";
-import LocalitiesPage from "./localitiesPage";
+import Localities from "../Localities";
 
 const FormLocalityName: FC<IFormLocalityName> = ({
   toggleLocationLayer,
@@ -127,7 +127,7 @@ const MobileForm: FC<IMobileFormProps> = ({
           alt="logo"
         />
       </div>
-      <LocalitiesPage isOpen={modalLocalities} />
+      <Localities isOpen={modalLocalities} localities={localities} />
       <Paper elevation={0} className={css.mobileContainer}>
         <SearchIcon fontSize="large" />
         <div className={css.test2}>

@@ -3,14 +3,22 @@ import css from "./styles.module.scss";
 import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import Person2OutlinedIcon from "@mui/icons-material/Person2Outlined";
 import { useTelegram } from "../../hooks";
+import useCssVariable from "../../hooks/useCssVariable";
 const Body: FC<PropsWithChildren> = ({ children }) => {
-  const tg = useTelegram();
+  const test = useCssVariable({
+    variableName: "--tg-theme-secondary-bg-color",
+  });
 
+  console.log("test", test);
+
+  const tg = useTelegram();
+  //Установить на header background
   useEffect(() => {
     if (!tg) return;
     tg.ready();
 
     tg.BackButton.show();
+    tg.setHeaderColor(test as string);
 
     // Обработчик нажатия на кнопку "Back"
     tg.BackButton.onClick(() => {
