@@ -3,14 +3,7 @@ import css from "./styles.module.scss";
 import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import Person2OutlinedIcon from "@mui/icons-material/Person2Outlined";
 import { useTelegram } from "../../hooks";
-import useCssVariable from "../../hooks/useCssVariable";
 const Body: FC<PropsWithChildren> = ({ children }) => {
-  const test = useCssVariable({
-    variableName: "--tg-theme-secondary-bg-color",
-  });
-
-  console.log("test", test);
-
   const tg = useTelegram();
   //Установить на header background
   useEffect(() => {

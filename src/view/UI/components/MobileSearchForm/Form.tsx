@@ -79,6 +79,10 @@ const MobileForm: FC<IMobileFormProps> = ({
   //FIXME:
   const [modalLocalities, setModalLocalities] = useState(false);
 
+  const closeModal = () => {
+    setModalLocalities(false);
+  };
+
   //FIXME: отправка формы только все поля будут заполнены
   useEffect(() => {
     if (originId && destinationId) {
@@ -127,7 +131,12 @@ const MobileForm: FC<IMobileFormProps> = ({
           alt="logo"
         />
       </div>
-      <Localities isOpen={modalLocalities} localities={localities} />
+      <Localities
+        isOpen={modalLocalities}
+        localities={localities}
+        loading={loading}
+        closeModal={closeModal}
+      />
       <Paper elevation={0} className={css.mobileContainer}>
         <SearchIcon fontSize="large" />
         <div className={css.test2}>
