@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import { Paper } from "@mui/material";
 import { useForm } from "react-hook-form";
 import css from "./styles.module.scss";

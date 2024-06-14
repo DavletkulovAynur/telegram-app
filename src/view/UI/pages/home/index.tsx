@@ -1,12 +1,10 @@
 import { FC } from "react";
 import { useRouter } from "react-router5";
-import { SearchForm } from "../../components/SearchForm";
 import { SubmitHandler } from "react-hook-form";
 import { IFormData } from "../../components/SearchForm/types";
 import css from "./styles.module.scss";
 import { useViewModel } from "../../hooks";
 import { observer } from "mobx-react-lite";
-import { ECategories } from "../../../../libs";
 import { MobileForm } from "../../components/MobileSearchForm";
 import Slider from "react-slick";
 
