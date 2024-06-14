@@ -2,7 +2,7 @@ import React, { FC, useEffect, useState } from "react";
 import { Paper } from "@mui/material";
 import { useForm } from "react-hook-form";
 import css from "./styles.module.scss";
-import SearchLocality from "./SearchLocality";
+// import SearchLocality from "./SearchLocality";
 import { ILocalityEntity } from "../../../../data/Locality";
 import {
   IFormData,
@@ -68,9 +68,9 @@ const MobileForm: FC<IMobileFormProps> = ({
   const originId = getValues("originId");
   const destinationId = getValues("destinationId");
   const [originError, setOriginError] = useState(false);
-  const [destinationError, setDestinationError] = useState(false);
-  const [isOriginModalOpen] = useState(false);
-  const [isToModalOpen] = useState(false);
+  const [destinationError] = useState(false);
+  // const [isOriginModalOpen] = useState(false);
+  // const [isToModalOpen] = useState(false);
   const [pointName, setPointName] = useState({
     origin: null as string | null,
     destination: null,
@@ -100,9 +100,9 @@ const MobileForm: FC<IMobileFormProps> = ({
   }, []);
   // ******* //
 
-  const searchLocality = (event: React.ChangeEvent<HTMLInputElement>) => {
-    getList(event.target.value);
-  };
+  // const searchLocality = (event: React.ChangeEvent<HTMLInputElement>) => {
+  //   getList(event.target.value);
+  // };
 
   //TODO: открываем слой
   const toggleLocationLayer = (type: TPoint) => {
@@ -111,13 +111,15 @@ const MobileForm: FC<IMobileFormProps> = ({
     setModalLocalities(true);
   };
 
-  const setLocation = (locality: ILocalityEntity, type: TPoint) => {
-    toggleLocationLayer(type);
-    const updatedPointName = { ...pointName, [type]: locality.name };
-    setPointName(updatedPointName);
-    type === TYPE_POINT.origin
-      ? (setValue("originId", locality.id), setOriginError(false))
-      : (setValue("destinationId", locality.id), setDestinationError(false));
+  const setLocation = (locality: ILocalityEntity) => {
+    //TODO:  должен еще принимать type
+    console.log("locality", locality);
+    // toggleLocationLayer(type);
+    // const updatedPointName = { ...pointName, [type]: locality.name };
+    // setPointName(updatedPointName);
+    // type === TYPE_POINT.origin
+    //   ? (setValue("originId", locality.id), setOriginError(false))
+    //   : (setValue("destinationId", locality.id), setDestinationError(false));
   };
 
   return (
@@ -131,12 +133,19 @@ const MobileForm: FC<IMobileFormProps> = ({
           alt="logo"
         />
       </div>
+      {/* TODO: это модальное окно!!! */}
       <Localities
         isOpen={modalLocalities}
         localities={localities}
         loading={loading}
         closeModal={closeModal}
+        setLocation={setLocation}
       />
+      {/* ********* */}
+      <div className={css.titleWrap}>
+        <div className={css.title}>Заберём вас</div>
+        <div className={css.subtitle}>где бы вы ни были!</div>
+      </div>
       <Paper elevation={0} className={css.mobileContainer}>
         <SearchIcon fontSize="large" />
         <div className={css.test2}>
@@ -159,8 +168,7 @@ const MobileForm: FC<IMobileFormProps> = ({
           />
         </div>
       </Paper>
-
-      {[TYPE_POINT.origin, TYPE_POINT.destination].map((type) => (
+      {/* {[TYPE_POINT.origin, TYPE_POINT.destination].map((type) => (
         <SearchLocality
           key={type}
           isOpen={type === "origin" ? isOriginModalOpen : isToModalOpen}
@@ -172,7 +180,7 @@ const MobileForm: FC<IMobileFormProps> = ({
           searchLocality={searchLocality}
           loading={loading}
         />
-      ))}
+      ))} */}
     </>
   );
 };

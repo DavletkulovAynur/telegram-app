@@ -18,8 +18,10 @@
   left: 0;
   width: 100%;
   height: 100%;
-  //FIXME: background
-  background-color: white;
+  background-color: var(
+    --tg-theme-secondary-bg-color,
+    var(--yy-background-default)
+  );
   //FIXME: z-index
   z-index: 4;
   animation: ani 0.4s forwards;

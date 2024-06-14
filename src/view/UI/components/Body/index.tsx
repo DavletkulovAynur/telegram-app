@@ -10,15 +10,7 @@ const Body: FC<PropsWithChildren> = ({ children }) => {
     if (!tg) return;
     tg.ready();
 
-    tg.BackButton.show();
     tg.setHeaderColor(tg.themeParams.secondary_bg_color as string);
-
-    // Обработчик нажатия на кнопку "Back"
-    tg.BackButton.onClick(() => {
-      // Ваш код для возврата на предыдущую страницу
-      alert("Возврат на предыдущую страницу");
-      tg.BackButton.hide();
-    });
   }, []);
   return (
     <div className={css.bodyWrapper}>

@@ -32,7 +32,7 @@ const Modal: React.FC<IProps> = ({ isOpen, children, closeModal }) => {
   return (
     <>
       {isOpen && (
-        <div className={css.modalOverlay} onClick={handleClose}>
+        <div className={css.modalOverlay}>
           <div className={css.modal}>
             {children}
             <button onClick={handleClose}>закрыть</button>

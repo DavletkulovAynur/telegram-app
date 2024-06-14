@@ -36,14 +36,14 @@ const Home: FC = observer(() => {
     <>
       {/* TODO:назвать класс по другому так как это не page */}
       <div className={css.page}>
-        <div className={css.desktop}>
+        {/* <div className={css.desktop}>
           <SearchForm
             gaCategory={ECategories.ORDERS}
             localitiesLoading={loading}
             onSearch={handleSearch}
             localities={localities}
           />
-        </div>
+        </div> */}
         <div className={css.mobile}>
           <MobileForm
             onSearch={handleSearch}
@@ -53,11 +53,6 @@ const Home: FC = observer(() => {
           />
         </div>
       </div>
-      {/* <div>
-        <div className={css.tgBgSecondary}>1</div>
-        <div className={css.tgBgMain}>2</div>
-        <div className={css.tgBgSection}>3</div>
-      </div> */}
       {/* слайдер */}
       <div className={css.sliderWrap}>
         <h2>Интересные места</h2>
