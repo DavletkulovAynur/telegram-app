@@ -3,7 +3,7 @@ import { useRouter } from "react-router5";
 import { SubmitHandler } from "react-hook-form";
 import { IFormData } from "../../components/SearchForm/types";
 import css from "./styles.module.scss";
-import { useViewModel } from "../../hooks";
+import { useTelegram, useViewModel } from "../../hooks";
 import { observer } from "mobx-react-lite";
 import {  SearchBlock } from "../../containers/SearchBlock";
 import Slider from "react-slick";
@@ -15,6 +15,7 @@ import sp3 from "../../assets/testImg/sp3.jpeg";
 import sp4 from "../../assets/testImg/sp4.jpeg";
 
 const Home: FC = observer(() => {
+  const tg = useTelegram()
   const { navigate } = useRouter();
   const { localities, loading, getList } = useViewModel("locality");
 
@@ -30,9 +31,11 @@ const Home: FC = observer(() => {
     slidesToScroll: 1,
   };
 
+  //
+  const theme = tg?.colorScheme === "dark" ? css.dark : css.light;
   return (
     <>
-      <div className={css.searchBlock}>
+      <div className={`${css.searchBlock} ${theme}`}>
         <SearchBlock
           onSearch={handleSearch}
           localities={localities}

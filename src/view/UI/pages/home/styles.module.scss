@@ -8,33 +8,13 @@
   padding-bottom: 16px;
   border-radius: 20px;
 }
+.dark {
+  background-color: #3c5a6b;
+}
 
-// /* Стили для десктопа (ширина экрана больше 1024 пикселей) */
-// @media screen and (min-width: #{$desktop-breakpoint}) {
-//   .desktop {
-//     display: flex;
-//     width: 100%;
-//     justify-content: center;
-//   }
-
-//   .mobile {
-//     display: none;
-//   }
-// }
-
-// /* Стили для мобильных устройств (ширина экрана 1024 пикселя и меньше) */
-// @media (max-width: #{$desktop-breakpoint}) {
-//   .desktop {
-//     display: none;
-//   }
-
-//   .mobile {
-//     display: block;
-//   }
-// }
-// //
-
-
+.light {
+  background-color: #89cffb;
+}
 //slider
 .sliderWrap {
   margin-top: 20px;

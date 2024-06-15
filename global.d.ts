@@ -13,6 +13,7 @@ export interface TelegramWebApp {
     };
     themeParams: ThemeParams;
   };
+  colorScheme: "light" | "dark";
   MainButton: {
     setText: (text: string) => void;
     show: () => void;

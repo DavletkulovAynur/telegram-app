@@ -1,8 +1,6 @@
 import { FC, StrictMode } from "react";
 import { observer } from "mobx-react-lite";
-// import { useRouter } from "react-router5";
 import { useChangeTheme } from "./hooks";
-// import { ERouteNames } from "../../router/routes.ts";
 import {
   CssBaseline,
   StyledEngineProvider,
@@ -14,15 +12,12 @@ import Body from "./components/Body";
 import App from "./App.tsx";
 import { IAppInitConfig } from "./types.ts";
 
+//FIXME: тут определяется темя как исправить???
 export const AppRoot: FC<{ themes: IAppInitConfig["themes"] }> = observer(
   ({ themes }) => {
     const [lightTheme, darkTheme] = themes;
     // const { navigate } = useRouter();
     const { theme } = useChangeTheme();
-
-    // const handleGoHome = () => {
-    //   navigate(ERouteNames.HOME);
-    // };
 
     return (
       <StrictMode>
