@@ -6,6 +6,7 @@ interface TypewriterProps {
     pause?: number;
 }
 
+//FIXME: переписать
 const Typewriter: React.FC<TypewriterProps> = ({ texts, speed = 100, pause = 2000 }) => {
     const [displayedText, setDisplayedText] = useState('');
     const [subIndex, setSubIndex] = useState(0);

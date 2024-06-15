@@ -1,66 +1,39 @@
 @import "../../assets/styles/variables.scss";
 
 //FIXME: color
-.page {
+.searchBlock {
   width: 100%;
   background-color: #89cffb;
   padding: 0 8px;
-  // padding-top: 32px;
   padding-bottom: 16px;
   border-radius: 20px;
 }
 
-.mobile {
-  width: 100%;
-}
+// /* Стили для десктопа (ширина экрана больше 1024 пикселей) */
+// @media screen and (min-width: #{$desktop-breakpoint}) {
+//   .desktop {
+//     display: flex;
+//     width: 100%;
+//     justify-content: center;
+//   }
 
-/* Стили для десктопа (ширина экрана больше 1024 пикселей) */
-@media screen and (min-width: #{$desktop-breakpoint}) {
-  .desktop {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-  }
+//   .mobile {
+//     display: none;
+//   }
+// }
 
-  .mobile {
-    display: none;
-  }
-}
+// /* Стили для мобильных устройств (ширина экрана 1024 пикселя и меньше) */
+// @media (max-width: #{$desktop-breakpoint}) {
+//   .desktop {
+//     display: none;
+//   }
 
-/* Стили для мобильных устройств (ширина экрана 1024 пикселя и меньше) */
-@media (max-width: #{$desktop-breakpoint}) {
-  .desktop {
-    display: none;
-  }
+//   .mobile {
+//     display: block;
+//   }
+// }
+// //
 
-  .mobile {
-    display: block;
-  }
-}
-//
-.tgBgSecondary {
-  background-color: var(
-    --tg-theme-secondary-bg-color,
-    var(--yy-background-paper)
-  );
-  width: 100px;
-  height: 100px;
-}
-
-.tgBgMain {
-  background-color: var(--tg-theme-bg-color, var(--yy-background-paper));
-  width: 100px;
-  height: 100px;
-}
-
-.tgBgSection {
-  background-color: var(
-    --tg-theme-section-bg-color,
-    var(--yy-background-paper)
-  );
-  width: 100px;
-  height: 100px;
-}
 
 //slider
 .sliderWrap {

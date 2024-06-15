@@ -12,16 +12,25 @@ export enum POINT_PLACEHOLDER {
 
 export type TPoint = TYPE_POINT.destination | TYPE_POINT.origin;
 
+export type TFormDataPoint = {
+  id: ID | null;
+  name: string | null;
+};
 export interface IFormData {
+  origin: TFormDataPoint;
+  destination: TFormDataPoint;
+}
+
+export type TSearchLocalityParams = {
   originId: ID;
   destinationId: ID;
-}
+};
 
 export interface IMobileFormProps {
   localities: ILocalityEntity[] | null;
   getList: (value?: string) => void;
   loading: boolean;
-  onSearch: (data: IFormData) => void;
+  onSearch: (data: TSearchLocalityParams) => void;
 }
 
 export interface ISearchLocality {
@@ -36,12 +45,11 @@ export interface ISearchLocality {
 }
 
 export interface IFormLocalityName {
-  toggleLocationLayer: (a: TPoint) => void;
+  openModal: (a: TPoint) => void;
   typePoint: TYPE_POINT;
   pointName: string | null;
   ID: ID;
   placeholderHTML: POINT_PLACEHOLDER;
-  error: unknown;
 }
 
 export interface ILocalities {

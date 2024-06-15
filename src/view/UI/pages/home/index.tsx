@@ -5,7 +5,7 @@ import { IFormData } from "../../components/SearchForm/types";
 import css from "./styles.module.scss";
 import { useViewModel } from "../../hooks";
 import { observer } from "mobx-react-lite";
-import { MobileForm } from "../../components/MobileSearchForm";
+import {  SearchBlock } from "../../containers/SearchBlock";
 import Slider from "react-slick";
 
 //
@@ -32,25 +32,15 @@ const Home: FC = observer(() => {
 
   return (
     <>
-      {/* TODO:назвать класс по другому так как это не page */}
-      <div className={css.page}>
-        {/* <div className={css.desktop}>
-          <SearchForm
-            gaCategory={ECategories.ORDERS}
-            localitiesLoading={loading}
-            onSearch={handleSearch}
-            localities={localities}
-          />
-        </div> */}
-        <div className={css.mobile}>
-          <MobileForm
-            onSearch={handleSearch}
-            localities={localities}
-            getList={getList}
-            loading={loading}
-          />
-        </div>
+      <div className={css.searchBlock}>
+        <SearchBlock
+          onSearch={handleSearch}
+          localities={localities}
+          getList={getList}
+          loading={loading}
+        />
       </div>
+
       {/* слайдер */}
       <div className={css.sliderWrap}>
         <h2>Интересные места</h2>
