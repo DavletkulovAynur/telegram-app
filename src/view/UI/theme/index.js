@@ -1,6 +1,8 @@
 import { createTheme } from "@mui/material";
 
-//FIXME: стили подправить 
+//TODO: возможно есть решение получше
+const tg = window?.Telegram?.WebApp;
+//FIXME: стили подправить
 const components = {
   MuiPaper: {
     styleOverrides: {
@@ -29,6 +31,9 @@ const components = {
 const typography = {
   button: {
     textTransform: "none",
+  },
+  body1: {
+    color: tg?.themeParams.text_color || "#cf3247 ", // Цвет текста по умолчанию
   },
 };
 
