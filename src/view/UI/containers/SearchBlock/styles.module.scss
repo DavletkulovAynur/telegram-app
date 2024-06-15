@@ -96,52 +96,22 @@
 
 .logo {
   border-radius: 10px;
-  position: relative;
+  position: absolute;
   top: -20px;
+  border: 4px solid
+    var(--tg-theme-secondary-bg-color, var(--yy-background-default));
 }
 
 .logoWrap {
   display: flex;
   justify-content: center;
+  position: relative;
+  margin-bottom: 32px;
 }
 
-.modalOverlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 3; /* высокий z-index для модального оверлея */
+.titleWrap {
+  margin-bottom: 8px;
 }
-
-.modal {
-  // opacity: 0;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: white; /* цвет фона модального окна */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 4; /* еще более высокий z-index для модального окна */
-  animation: ani 0.4s forwards;
-}
-
-@keyframes ani {
-  0% {
-    transform: translateX(100%);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-
-//
 .title {
   text-align: center;
   font-size: 28px;
@@ -151,4 +121,5 @@
 .subtitle {
   text-align: center;
   font-size: 16px;
+  color: var(--tg-theme-hint-color, var(--yy-text-secondary));
 }
