@@ -3,6 +3,13 @@
   background-color: var(--tg-theme-section-bg-color, #fff);
   padding: 16px;
   border-radius: 20px;
+  position: relative;
+}
+
+.icon {
+  position: absolute;
+  top: 0;
+  left: 85%;
 }
 
 .eventBlock {
@@ -51,4 +58,5 @@
 
 .subtitle {
   font-size: 16px;
+  color: var(--tg-theme-hint-color, #000000);
 }

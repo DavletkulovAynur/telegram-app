@@ -1,10 +1,12 @@
 import css from "./styles.module.scss";
 import test from "../../../assets/testImg/sp3.jpeg";
 import Button from "@mui/material/Button";
+import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 
 function CenterMode() {
   return (
     <div className={css.container}>
+      <CalendarMonthIcon className={css.icon} fontSize="large" />
       <div className={css.title}>Событие недели</div>
       <span className={css.subtitle}>башкортостан</span>
       <div className={css.eventBlock}>
