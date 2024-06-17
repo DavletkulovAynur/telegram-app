@@ -47,6 +47,15 @@ const Home: FC = observer(() => {
       <div className={css.qwer}>
         <img className={css.loup} src={loup}></img>
       </div>
+      <div className={css.qwer}>
+        <img className={css.loup} src={loup}></img>
+      </div>
+      <div className={css.qwer}>
+        <img className={css.loup} src={loup}></img>
+      </div>
+      <div className={css.qwer}>
+        <img className={css.loup} src={loup}></img>
+      </div>
     </>
   );
 });
