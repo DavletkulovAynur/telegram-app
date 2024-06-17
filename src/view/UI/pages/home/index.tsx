@@ -12,6 +12,8 @@ import Person2OutlinedIcon from "@mui/icons-material/Person2Outlined";
 import { useViewModel } from "../../hooks";
 import Event from "./events";
 
+import loup from "../../assets/testImg/loup.jpeg";
+
 const Home: FC = observer(() => {
   const { navigate } = useRouter();
   const { localities, loading, getList } = useViewModel("locality");
@@ -41,6 +43,10 @@ const Home: FC = observer(() => {
         loading={loading}
       />
       <Event />
+
+      <div className={css.qwer}>
+        <img className={css.loup} src={loup}></img>
+      </div>
     </>
   );
 });

@@ -37,7 +37,6 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add some shadow */
 }
 
-
 //HEADER
 .header {
   padding: 16px 0;
@@ -60,3 +59,17 @@
   );
 }
 // ______
+
+.qwer {
+  position: relative;
+  margin-top: 20px;
+  background-color: #000;
+  border-radius: 20px;
+  overflow: hidden;
+  // padding: 16px;
+}
+
+.loup {
+  width: 160px;
+  height: 160px;
+}
