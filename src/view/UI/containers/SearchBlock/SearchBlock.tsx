@@ -78,7 +78,6 @@ const SearchBlock: FC<IMobileFormProps> = ({
       <div className={`${css.searchBlock} ${theme}`}>
         <div className={css.titleWrap}>
           <div className={css.title}>Заберём вас</div>
-          {/* <div className={css.subtitle}>где бы вы ни были!</div> */}
         </div>
         <Paper elevation={0} className={css.mobileContainer}>
           <SearchIcon fontSize="large" />

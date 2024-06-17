@@ -5,19 +5,12 @@ import { IFormData } from "../../components/SearchForm/types";
 import css from "./styles.module.scss";
 import { observer } from "mobx-react-lite";
 import { SearchBlock } from "../../containers/SearchBlock";
-import Slider from "react-slick";
 import { IconButton } from "@mui/material";
 
 import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import Person2OutlinedIcon from "@mui/icons-material/Person2Outlined";
-
-//
-import sp1 from "../../assets/testImg/sp1.jpeg";
-import sp2 from "../../assets/testImg/sp5.jpeg";
-import sp3 from "../../assets/testImg/sp3.jpeg";
-import sp4 from "../../assets/testImg/sp4.jpeg";
-//LOGO
 import { useViewModel } from "../../hooks";
+import Event from "./events";
 
 const Home: FC = observer(() => {
   const { navigate } = useRouter();
@@ -27,17 +20,8 @@ const Home: FC = observer(() => {
     navigate("orders", data);
   };
 
-
   const handleOpenProfilePage = () => {
     navigate("profile");
-  };
-
-  const settings = {
-    dots: false,
-    infinite: false,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
   };
   return (
     <>
@@ -56,18 +40,7 @@ const Home: FC = observer(() => {
         getList={getList}
         loading={loading}
       />
-
-      {/* слайдер */}
-      <div className={css.sliderWrap}>
-        <h2>Интересные места</h2>
-        <div>Башкортостан</div>
-        <Slider {...settings}>
-          <img className={css.image} src={sp3} alt="" />
-          <img className={css.image} src={sp4} alt="" />
-          <img className={css.image} src={sp1} alt="" />
-          <img className={css.image} src={sp2} alt="" />
-        </Slider>
-      </div>
+      <Event />
     </>
   );
 });
