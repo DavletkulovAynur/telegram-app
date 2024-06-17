@@ -3,9 +3,8 @@ import { useRouter } from "react-router5";
 import { SubmitHandler } from "react-hook-form";
 import { IFormData } from "../../components/SearchForm/types";
 import css from "./styles.module.scss";
-import { useTelegram, useViewModel } from "../../hooks";
 import { observer } from "mobx-react-lite";
-import {  SearchBlock } from "../../containers/SearchBlock";
+import { SearchBlock } from "../../containers/SearchBlock";
 import Slider from "react-slick";
 
 //
@@ -13,9 +12,10 @@ import sp1 from "../../assets/testImg/sp1.jpeg";
 import sp2 from "../../assets/testImg/sp5.jpeg";
 import sp3 from "../../assets/testImg/sp3.jpeg";
 import sp4 from "../../assets/testImg/sp4.jpeg";
+//LOGO
+import { useViewModel } from "../../hooks";
 
 const Home: FC = observer(() => {
-  const tg = useTelegram()
   const { navigate } = useRouter();
   const { localities, loading, getList } = useViewModel("locality");
 
@@ -30,20 +30,16 @@ const Home: FC = observer(() => {
     slidesToShow: 1,
     slidesToScroll: 1,
   };
-
-  //
-  const theme = tg?.colorScheme === "dark" ? css.dark : css.light;
   return (
     <>
-      <div className={`${css.searchBlock} ${theme}`}>
+     
         <SearchBlock
           onSearch={handleSearch}
           localities={localities}
           getList={getList}
           loading={loading}
         />
-      </div>
-
+    
       {/* слайдер */}
       <div className={css.sliderWrap}>
         <h2>Интересные места</h2>

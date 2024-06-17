@@ -4,8 +4,8 @@ import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import Person2OutlinedIcon from "@mui/icons-material/Person2Outlined";
 import { useTelegram } from "../../hooks";
 const Body: FC<PropsWithChildren> = ({ children }) => {
+  //FIXME: вынести глобально
   const tg = useTelegram();
-  //Установить на header background
   useEffect(() => {
     if (!tg) return;
     tg.ready();

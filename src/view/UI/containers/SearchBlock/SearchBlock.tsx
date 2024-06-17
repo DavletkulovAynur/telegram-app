@@ -13,6 +13,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import logo from "../../assets/logo.png";
 import InputItem from "./InputItem";
 import Localities from "../../components/Localities";
+import { useTelegram } from "../../hooks";
 
 const SearchBlock: FC<IMobileFormProps> = ({
   localities = [],
@@ -20,6 +21,7 @@ const SearchBlock: FC<IMobileFormProps> = ({
   loading,
   onSearch,
 }) => {
+  const tg = useTelegram();
   //TODO: ИСПРАВИТЬ В ПЕРВУЮ ОЧЕРЕДЬ (при изменение базы данных тут поменять наименования)
   const { getValues, control, setValue, watch } = useForm<IFormData>({
     defaultValues: {
@@ -59,8 +61,10 @@ const SearchBlock: FC<IMobileFormProps> = ({
     setModalLocalities(true);
   };
 
+  const theme = tg?.colorScheme === "dark" ? css.dark : css.light;
+
   return (
-    <>
+    <div className={css.container}>
       <div className={css.logoWrap}>
         <img
           height={50}
@@ -70,28 +74,31 @@ const SearchBlock: FC<IMobileFormProps> = ({
           alt="logo"
         />
       </div>
-      <div className={css.titleWrap}>
-        <div className={css.title}>Заберём вас</div>
-        <div className={css.subtitle}>где бы вы ни были!</div>
-      </div>
-      <Paper elevation={0} className={css.mobileContainer}>
-        <SearchIcon fontSize="large" />
-        <div className={css.test2}>
-          <InputItem
-            openModal={openModal}
-            typePoint={TYPE_POINT.origin}
-            point={origin}
-            placeholderHTML={POINT_PLACEHOLDER.origin}
-          />
-          <div className={css.line} />
-          <InputItem
-            openModal={openModal}
-            typePoint={TYPE_POINT.destination}
-            point={destination}
-            placeholderHTML={POINT_PLACEHOLDER.destination}
-          />
+
+      <div className={`${css.searchBlock} ${theme}`}>
+        <div className={css.titleWrap}>
+          <div className={css.title}>Заберём вас</div>
+          <div className={css.subtitle}>где бы вы ни были!</div>
         </div>
-      </Paper>
+        <Paper elevation={0} className={css.mobileContainer}>
+          <SearchIcon fontSize="large" />
+          <div className={css.test2}>
+            <InputItem
+              openModal={openModal}
+              typePoint={TYPE_POINT.origin}
+              point={origin}
+              placeholderHTML={POINT_PLACEHOLDER.origin}
+            />
+            <div className={css.line} />
+            <InputItem
+              openModal={openModal}
+              typePoint={TYPE_POINT.destination}
+              point={destination}
+              placeholderHTML={POINT_PLACEHOLDER.destination}
+            />
+          </div>
+        </Paper>
+      </div>
 
       {/* TODO: это модальное окно!!! */}
       <Localities
@@ -104,7 +111,7 @@ const SearchBlock: FC<IMobileFormProps> = ({
         control={control}
       />
       {/* МОЖНО ЛИ БУДЕТ ВЫНОСИТЬ В ГЛОБАЛЬНЫЙ КОМПОНЕНТ*/}
-    </>
+    </div>
   );
 };
 

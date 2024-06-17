@@ -1,3 +1,24 @@
+.container {
+  position: relative;
+}
+
+//FIXME: color
+.searchBlock {
+  width: 100%;
+  padding: 16px 8px;
+  padding-top: 32px;
+  border-radius: 20px;
+  position: relative;
+}
+.dark {
+  background-color: #3c5a6b;
+}
+
+.light {
+  background-color: #89cffb;
+}
+//
+
 .mobileContainer {
   border-radius: 20px;
   padding: 12px;
@@ -94,24 +115,25 @@
   font-weight: bold;
 }
 
+//LOGO
 .logoWrap {
   display: flex;
   justify-content: center;
-  position: relative;
-  margin-bottom: 32px;
+  position: absolute;
+  width: 100%;
+  top: -24px;
+  z-index: 2;
 }
 
 .logo {
   border-radius: 10px;
-  position: absolute;
-  top: -20px;
   border: 4px solid
     var(--tg-theme-secondary-bg-color, var(--yy-background-default));
 }
+//
 
 .titleWrap {
   margin-bottom: 8px;
-  margin-top: 32px;
 }
 .title {
   text-align: center;
@@ -122,5 +144,4 @@
 .subtitle {
   text-align: center;
   font-size: 16px;
-  // color: var(--tg-theme-hint-color, var(--yy-text-secondary));
 }
