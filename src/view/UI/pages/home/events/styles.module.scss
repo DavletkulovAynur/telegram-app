@@ -1,10 +1,22 @@
-.wrap {
-  // background: red;
-  padding: 0 8px;
+.container {
+  background-color: var(--tg-theme-section-bg-color, #fff);
+  padding: 16px;
+  border-radius: 20px;
 }
 
-.content {
-  background: blue;
+.eventBlock {
+  background-color: var(--tg-theme-section-bg-color, #f4f4f4);
+  padding: 8px;
+  border-radius: 20px;
+}
+
+.eventImg {
+  width: 100px;
   height: 100px;
   border-radius: 20px;
+}
+
+.button {
+  width: 100%;
+  margin-top: 10px;
 }
