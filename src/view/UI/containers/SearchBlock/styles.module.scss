@@ -6,7 +6,7 @@
 .searchBlock {
   width: 100%;
   padding: 16px 8px;
-  padding-top: 32px;
+  padding-top: 42px;
   border-radius: 20px;
   position: relative;
 }
@@ -126,7 +126,7 @@
 }
 
 .logo {
-  border-radius: 10px;
+  border-radius: 20px;
   border: 4px solid
     var(--tg-theme-secondary-bg-color, var(--yy-background-default));
 }

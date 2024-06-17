@@ -67,8 +67,8 @@ const SearchBlock: FC<IMobileFormProps> = ({
     <div className={css.container}>
       <div className={css.logoWrap}>
         <img
-          height={50}
-          width={50}
+          height={60}
+          width={60}
           className={css.logo}
           src={logo}
           alt="logo"
@@ -78,7 +78,7 @@ const SearchBlock: FC<IMobileFormProps> = ({
       <div className={`${css.searchBlock} ${theme}`}>
         <div className={css.titleWrap}>
           <div className={css.title}>Заберём вас</div>
-          <div className={css.subtitle}>где бы вы ни были!</div>
+          {/* <div className={css.subtitle}>где бы вы ни были!</div> */}
         </div>
         <Paper elevation={0} className={css.mobileContainer}>
           <SearchIcon fontSize="large" />
