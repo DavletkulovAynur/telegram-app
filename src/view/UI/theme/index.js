@@ -40,7 +40,7 @@ const typography = {
 export const lightTheme = createTheme({
   palette: {
     primary: {
-      main: tg?.themeParams.text_color || "#89cffb",
+      main: tg?.themeParams.button_color || "#89cffb",
       light: "#8ad6d6",
       contrastText: "rgba(255, 255, 255, 0.87)",
     },
@@ -59,7 +59,7 @@ export const darkTheme = createTheme({
   palette: {
     mode: "dark",
     primary: {
-      main: tg?.themeParams.text_color || "#0db2b2",
+      main: tg?.themeParams.button_color || "#0db2b2",
       light: "#8ad6d6",
       contrastText: "rgba(0, 0, 0, 0.87)",
     },
