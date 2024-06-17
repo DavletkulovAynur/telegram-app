@@ -4,6 +4,7 @@ import { setDocumentTitle } from "../libs/utils";
 export enum ERouteNames {
   ORDERS = "orders",
   HOME = "home",
+  PROFILE = "profile",
 }
 
 const routes: IRoutes = [
@@ -13,6 +14,10 @@ const routes: IRoutes = [
     onActivate: async (store) => {
       store.locality.getList();
     },
+  },
+  {
+    name: ERouteNames.PROFILE,
+    path: "/profile",
   },
   {
     name: ERouteNames.ORDERS,

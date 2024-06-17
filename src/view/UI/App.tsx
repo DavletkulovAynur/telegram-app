@@ -6,6 +6,7 @@ import { ERouteNames } from "../../router/routes";
 import "./style.css";
 
 const HomePage = lazy(() => import("./pages/home"));
+const ProfilePage = lazy(() => import("./pages/profile"));
 const OrdersPage = lazy(() => import("./pages/orders"));
 const NotFoundPage = lazy(() => import("./pages/notFound"));
 
@@ -21,6 +22,10 @@ export const App: FC = () => {
 
     case ERouteNames.ORDERS:
       page = <OrdersPage />;
+      break;
+
+    case ERouteNames.PROFILE:
+      page = <ProfilePage />;
       break;
 
     case constants.UNKNOWN_ROUTE:

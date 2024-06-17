@@ -6,6 +6,10 @@ import css from "./styles.module.scss";
 import { observer } from "mobx-react-lite";
 import { SearchBlock } from "../../containers/SearchBlock";
 import Slider from "react-slick";
+import { IconButton } from "@mui/material";
+
+import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
+import Person2OutlinedIcon from "@mui/icons-material/Person2Outlined";
 
 //
 import sp1 from "../../assets/testImg/sp1.jpeg";
@@ -23,6 +27,11 @@ const Home: FC = observer(() => {
     navigate("orders", data);
   };
 
+
+  const handleOpenProfilePage = () => {
+    navigate("profile");
+  };
+
   const settings = {
     dots: false,
     infinite: false,
@@ -32,14 +41,22 @@ const Home: FC = observer(() => {
   };
   return (
     <>
-     
-        <SearchBlock
-          onSearch={handleSearch}
-          localities={localities}
-          getList={getList}
-          loading={loading}
-        />
-    
+      <header className={css.header}>
+        <div className={css.iconWrap}>
+          <SettingsOutlinedIcon fontSize="medium" />
+        </div>
+
+        <IconButton onClick={handleOpenProfilePage} className={css.iconWrap}>
+          <Person2OutlinedIcon fontSize="medium" />
+        </IconButton>
+      </header>
+      <SearchBlock
+        onSearch={handleSearch}
+        localities={localities}
+        getList={getList}
+        loading={loading}
+      />
+
       {/* слайдер */}
       <div className={css.sliderWrap}>
         <h2>Интересные места</h2>

@@ -36,3 +36,27 @@
   border-radius: 20px; /* Optional: Add some styling */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add some shadow */
 }
+
+
+//HEADER
+.header {
+  padding: 16px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 24px;
+}
+
+.iconWrap {
+  display: flex;
+  padding: 10px;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: var(
+    --tg-theme-section-bg-color,
+    var(--yy-background-paper)
+  );
+}
+// ______
