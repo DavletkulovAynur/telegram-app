@@ -94,6 +94,13 @@
   font-weight: bold;
 }
 
+.logoWrap {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 32px;
+}
+
 .logo {
   border-radius: 10px;
   position: absolute;
@@ -102,15 +109,9 @@
     var(--tg-theme-secondary-bg-color, var(--yy-background-default));
 }
 
-.logoWrap {
-  display: flex;
-  justify-content: center;
-  position: relative;
-  margin-bottom: 32px;
-}
-
 .titleWrap {
   margin-bottom: 8px;
+  margin-top: 32px;
 }
 .title {
   text-align: center;
@@ -121,5 +122,5 @@
 .subtitle {
   text-align: center;
   font-size: 16px;
-  color: var(--tg-theme-hint-color, var(--yy-text-secondary));
+  // color: var(--tg-theme-hint-color, var(--yy-text-secondary));
 }
