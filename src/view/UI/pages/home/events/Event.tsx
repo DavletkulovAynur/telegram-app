@@ -16,7 +16,7 @@ function CenterMode() {
         </div>
       </div>
       <Button className={css.button} color="primary" variant="contained">
-        Отмена
+        Поскакали
       </Button>
     </div>
   );
