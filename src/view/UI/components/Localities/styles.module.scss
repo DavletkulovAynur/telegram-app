@@ -3,7 +3,7 @@
   width: 100%;
   margin-top: 12px;
   overflow: scroll;
-  // height: 2000px;
+  height: 2000px;
   background-color: var(
     --tg-theme-secondary-bg-color,
     var(--yy-background-paper)
@@ -15,8 +15,6 @@
 .locality {
   display: flex;
   align-items: center;
-  // border-bottom: 1px solid var(--yy-grey-300);
-  // padding: 12px 0;
   background-color: var(
     --tg-theme-section-bg-color,
     var(--yy-background-section)
@@ -38,6 +36,8 @@
 
 //FORM
 .formWrap {
+  position: sticky;
+  top: 0;
   padding: 8px 12px;
   padding-bottom: 24px;
   border-radius: 20px;
