@@ -1,0 +1,14 @@
+.container {
+  position: relative;
+  margin-top: 20px;
+  background-color: #000;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+}
+
+.loup {
+  width: 100px;
+  height: 100px;
+}

@@ -13,10 +13,6 @@ interface IProps {
 const Modal: React.FC<IProps> = ({ isOpen, children, closeModal }) => {
   const tg = useTelegram();
 
-  const handleClose = () => {
-    closeModal?.();
-  };
-
   useEffect(() => {
     if (!tg) return;
 
@@ -33,10 +29,7 @@ const Modal: React.FC<IProps> = ({ isOpen, children, closeModal }) => {
     <>
       {isOpen && (
         <div className={css.modalOverlay}>
-          <div className={css.modal}>
-            {children}
-            <button onClick={handleClose}>закрыть</button>
-          </div>
+          <div className={css.modal}>{children}</div>
         </div>
       )}
     </>
