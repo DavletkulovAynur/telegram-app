@@ -26,6 +26,7 @@ export interface TelegramWebApp {
     hide: () => void;
   };
   setHeaderColor: (color: string) => void;
+  setBackgroundColor: (color: string) => void;
   sendData: (data: string) => void;
   close: () => void;
   showPopup: (params: {

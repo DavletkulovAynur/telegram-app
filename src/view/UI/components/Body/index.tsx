@@ -9,6 +9,7 @@ const Body: FC<PropsWithChildren> = ({ children }) => {
     tg.ready();
 
     tg.setHeaderColor(tg.themeParams.secondary_bg_color as string);
+    tg.setBackgroundColor(tg.themeParams.secondary_bg_color as string);
   }, []);
   return (
     <div className={css.bodyWrapper}>
