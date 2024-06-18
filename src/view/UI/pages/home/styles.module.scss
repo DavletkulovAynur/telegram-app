@@ -1,42 +1,5 @@
 @import "../../assets/styles/variables.scss";
 
-//slider
-.sliderWrap {
-  margin-top: 20px;
-  background-color: var(
-    --tg-theme-section-bg-color,
-    var(--yy-background-section)
-  );
-  border-radius: 20px;
-  padding: 10px;
-  overflow-x: hidden; /* Hide the scrollbar */
-}
-
-.imagesWrap {
-  display: flex;
-  overflow-x: auto; /* Enable horizontal scrolling */
-  scroll-behavior: smooth; /* Smooth scrolling */
-  gap: 10px; /* Space between images */
-  -webkit-overflow-scrolling: touch;
-}
-
-.imagesWrap::-webkit-scrollbar {
-  display: none; /* Hide the scrollbar in Webkit browsers */
-}
-
-.imagesWrap {
-  -ms-overflow-style: none; /* Hide the scrollbar in IE and Edge */
-  scrollbar-width: none; /* Hide the scrollbar in Firefox */
-}
-
-.image {
-  flex-shrink: 0; /* Prevent images from shrinking */
-  width: 140px; /* Set a fixed width for images */
-  height: 140px; /* Maintain aspect ratio */
-  border-radius: 20px; /* Optional: Add some styling */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add some shadow */
-}
-
 //HEADER
 .header {
   padding: 16px 0;
@@ -54,7 +17,7 @@
   justify-content: center;
   border-radius: 50%;
   background-color: var(
-    --tg-theme-section-bg-color,
+    --tg-theme-secondary-bg-color,
     var(--yy-background-paper)
   );
 }
@@ -66,7 +29,6 @@
   background-color: #000;
   border-radius: 20px;
   overflow: hidden;
-  // padding: 16px;
 }
 
 .loup {

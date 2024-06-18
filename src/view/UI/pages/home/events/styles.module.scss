@@ -1,6 +1,6 @@
 .container {
   margin-top: 20px;
-  background-color: var(--tg-theme-section-bg-color, #fff);
+  background-color: var(--tg-theme-secondary-bg-color, #fff);
   padding: 16px;
   border-radius: 20px;
   position: relative;
@@ -47,8 +47,6 @@
 .button {
   width: 100%;
   margin-top: 10px;
-  // background: var(--tg-theme-button-color, #a71919);
-  // color: var(--tg-theme-button-text-color, #fff);
 }
 
 .title {
