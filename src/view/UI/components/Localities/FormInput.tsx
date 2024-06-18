@@ -53,52 +53,57 @@ const FormInput: FC<IProps> = ({ searchLocality, control }) => {
   }, []);
 
   return (
-    <div className={css.formWrap}>
-      <div className={css.inputWrap}>
-        <LocationSearchingOutlinedIcon className={css.icon} fontSize="medium" />
-        <Controller
-          name="origin"
-          control={control}
-          render={({ field: { value, onChange, ...field } }) => (
-            <TextField
-              {...field}
-              inputRef={originRef}
-              fullWidth
-              placeholder="Откуда"
-              label="Откуда"
-              variant="standard"
-              value={value.name}
-              onChange={(e) => {
-                const newValue = { id: value.id, name: e.target.value };
-                onChange(newValue);
-                searchLocality(e.target.value);
-              }}
-            />
-          )}
-        />
-      </div>
-      <div className={css.inputWrap}>
-        <MyLocationOutlinedIcon className={css.icon} fontSize="medium" />
-        <Controller
-          name="destination"
-          control={control}
-          render={({ field: { value, onChange, ...field } }) => (
-            <TextField
-              {...field}
-              inputRef={destinationRef}
-              fullWidth
-              placeholder="Откуда"
-              label="Откуда"
-              variant="standard"
-              value={value.name}
-              onChange={(e) => {
-                const newValue = { id: value.id, name: e.target.value };
-                onChange(newValue);
-                searchLocality(e.target.value);
-              }}
-            />
-          )}
-        />
+    <div className={css.formContainer}>
+      <div className={css.formWrap}>
+        <div className={css.inputWrap}>
+          <LocationSearchingOutlinedIcon
+            className={css.icon}
+            fontSize="medium"
+          />
+          <Controller
+            name="origin"
+            control={control}
+            render={({ field: { value, onChange, ...field } }) => (
+              <TextField
+                {...field}
+                inputRef={originRef}
+                fullWidth
+                placeholder="Откуда"
+                label="Откуда"
+                variant="standard"
+                value={value.name}
+                onChange={(e) => {
+                  const newValue = { id: value.id, name: e.target.value };
+                  onChange(newValue);
+                  searchLocality(e.target.value);
+                }}
+              />
+            )}
+          />
+        </div>
+        <div className={css.inputWrap}>
+          <MyLocationOutlinedIcon className={css.icon} fontSize="medium" />
+          <Controller
+            name="destination"
+            control={control}
+            render={({ field: { value, onChange, ...field } }) => (
+              <TextField
+                {...field}
+                inputRef={destinationRef}
+                fullWidth
+                placeholder="Откуда"
+                label="Откуда"
+                variant="standard"
+                value={value.name}
+                onChange={(e) => {
+                  const newValue = { id: value.id, name: e.target.value };
+                  onChange(newValue);
+                  searchLocality(e.target.value);
+                }}
+              />
+            )}
+          />
+        </div>
       </div>
     </div>
   );
