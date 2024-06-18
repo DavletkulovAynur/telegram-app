@@ -22,8 +22,8 @@ const SearchBlock: FC<IMobileFormProps> = ({
   onSearch,
 }) => {
   const tg = useTelegram();
-  const [test, setTest] = useState<TYPE_POINT>(TYPE_POINT.origin);
-  //TODO: ИСПРАВИТЬ В ПЕРВУЮ ОЧЕРЕДЬ (при изменение базы данных тут поменять наименования)
+  const [activePoint, setActivePoint] = useState<TYPE_POINT>(TYPE_POINT.origin);
+
   const { getValues, control, setValue, watch } = useForm<IFormData>({
     defaultValues: {
       origin: { id: "2", name: "Уфа" },
@@ -35,17 +35,19 @@ const SearchBlock: FC<IMobileFormProps> = ({
   const destination = watch("destination");
 
   useEffect(() => {
+    console.log("origin", origin);
+  }, [origin]);
+
+  useEffect(() => {
     if (origin.id && destination.id) {
       onSearch({ originId: origin.id, destinationId: destination.id });
     }
-    console.log("super", origin.id, destination.id);
-  }, [origin.id, destination.id]);
+  }, [origin.id, destination.id, onSearch]);
 
-  //FIXME: переименовать
-  const [modalLocalities, setModalLocalities] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const closeModal = () => {
-    setModalLocalities(false);
+    setIsModalOpen(false);
   };
 
   const searchLocality = (value: string) => {
@@ -53,18 +55,21 @@ const SearchBlock: FC<IMobileFormProps> = ({
   };
 
   const setLocation = (locality: ILocalityEntity) => {
-    setModalLocalities(false);
-    const currentOrigin = getValues(test);
-    setValue(test, { ...currentOrigin, id: locality.id, name: locality.name });
+    setIsModalOpen(false);
+    setValue(activePoint, {
+      id: locality.id,
+      name: locality.name,
+    });
   };
 
-  const openModal = (e: TYPE_POINT) => {
-    setTest(e);
+  //ОТКРЫВАЕМ МОДАЛЬНОЕ ОКНО СО СПИСКОМ НАСЕЛЕННЫХ ПУНКТОВ
+  const openModal = (pointType: TYPE_POINT) => {
+    setActivePoint(pointType);
     getList();
-    setModalLocalities(true);
+    setIsModalOpen(true);
   };
 
-  const theme = tg?.colorScheme === "dark" ? css.dark : css.light;
+  const themeClass = tg?.colorScheme === "dark" ? css.dark : css.light;
 
   return (
     <div className={css.container}>
@@ -78,13 +83,13 @@ const SearchBlock: FC<IMobileFormProps> = ({
         />
       </div>
 
-      <div className={`${css.searchBlock} ${theme}`}>
+      <div className={`${css.searchBlock} ${themeClass}`}>
         <div className={css.titleWrap}>
           <div className={css.title}>Заберём вас</div>
         </div>
         <Paper elevation={0} className={css.mobileContainer}>
           <SearchIcon fontSize="large" />
-          <div className={css.test2}>
+          <div className={css.inputsWrapper}>
             <InputItem
               openModal={openModal}
               typePoint={TYPE_POINT.origin}
@@ -102,10 +107,9 @@ const SearchBlock: FC<IMobileFormProps> = ({
         </Paper>
       </div>
 
-      {/* TODO: это модальное окно!!! */}
       <Localities
-        test={test}
-        isOpen={modalLocalities}
+        activePoint={activePoint}
+        isOpen={isModalOpen}
         localities={localities}
         loading={loading}
         closeModal={closeModal}
@@ -113,7 +117,6 @@ const SearchBlock: FC<IMobileFormProps> = ({
         searchLocality={searchLocality}
         control={control}
       />
-      {/* МОЖНО ЛИ БУДЕТ ВЫНОСИТЬ В ГЛОБАЛЬНЫЙ КОМПОНЕНТ*/}
     </div>
   );
 };

@@ -21,7 +21,7 @@ interface IProps {
   closeModal: () => void;
   control: Control<IFormData>;
   // loading: boolean;
-  test: TYPE_POINT;
+  activePoint: TYPE_POINT;
 }
 
 const Localities: React.FC<IProps> = ({
@@ -32,12 +32,12 @@ const Localities: React.FC<IProps> = ({
   setLocation,
   searchLocality,
   control,
-  test,
+  activePoint,
 }) => {
   return (
     <Modal isOpen={isOpen} closeModal={closeModal}>
       <FormInput
-        test={test}
+        activePoint={activePoint}
         searchLocality={searchLocality}
         control={control}
       />
@@ -54,6 +54,7 @@ const Localities: React.FC<IProps> = ({
           <p>Ничего не найдено</p>
         </div>
       )}
+      <button onClick={closeModal}>pfrhsnm</button>
     </Modal>
   );
 };

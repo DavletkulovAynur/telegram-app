@@ -3,33 +3,36 @@ import { TextField } from "@mui/material";
 import css from "./styles.module.scss";
 
 import { Control, Controller } from "react-hook-form";
-import { IFormData, POINT_PLACEHOLDER, TYPE_POINT } from "../../containers/SearchBlock/types";
+import {
+  IFormData,
+  POINT_PLACEHOLDER,
+  TYPE_POINT,
+} from "../../containers/SearchBlock/types";
 
 interface IProps {
   searchLocality: (event: string) => void;
   control: Control<IFormData>;
-  test: TYPE_POINT;
+  activePoint: TYPE_POINT;
 }
 
-const FormInput: FC<IProps> = ({ searchLocality, control, test }) => {
+const FormInput: FC<IProps> = ({ searchLocality, control, activePoint }) => {
   //TODO: name + label
   return (
     <div className={css.formWrap}>
       <div className={css.inputWrap}>
         <Controller
-          name={test}
+          name={activePoint}
           control={control}
           render={({ field: { value, onChange, ...field } }) => (
             <TextField
               {...field}
-              // inputRef={originRef}
               fullWidth
-              placeholder={POINT_PLACEHOLDER[test]}
-              label={POINT_PLACEHOLDER[test]}
+              placeholder={POINT_PLACEHOLDER[activePoint]}
+              label={POINT_PLACEHOLDER[activePoint]}
               variant="outlined"
               value={value.name}
               onChange={(e) => {
-                const newValue = { id: value.id, name: e.target.value };
+                const newValue = { id: null, name: e.target.value };
                 onChange(newValue);
                 searchLocality(e.target.value);
               }}
