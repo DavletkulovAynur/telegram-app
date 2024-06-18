@@ -2,36 +2,36 @@
 .localities {
   width: 100%;
   margin-top: 12px;
-  overflow: scroll;
-  background-color: var(
-    --tg-theme-secondary-bg-color,
-    var(--yy-background-paper)
-  );
-  border-radius: 20px;
+
   padding: 8px;
 }
 
 .locality {
   display: flex;
   align-items: center;
-  background-color: var(
-    --tg-theme-section-bg-color,
-    var(--yy-background-section)
-  );
-  border-radius: 10px;
-  padding: 8px;
-  margin-bottom: 8px;
+  border-bottom: 1px solid var(
+    --tg-theme-hint-color,
+    var(--yy-grey-a200)
+  );;
+  padding: 12px;
+  // background-color: var(
+  //   --tg-theme-section-bg-color,
+  //   var(--yy-background-section)
+  // );
+  // border-radius: 10px;
+  // padding: 8px;
+  // margin-bottom: 8px;
 }
 
 .localitiesDistrict {
   font-size: 12px;
-  margin-left: 12px;
+  // margin-left: 12px;
 }
 
 .localitiesName {
   font-size: 20px;
   font-weight: bold;
-  margin-left: 12px;
+  // margin-left: 12px;
 }
 //
 
@@ -40,7 +40,7 @@
   border-radius: 0 0 20px 20px;
   position: sticky;
   top: 0;
-  padding: 8px ;
+  padding: 16px;
   padding-top: 24px;
   background-color: var(
     --tg-theme-section-bg-color,
@@ -54,10 +54,10 @@
   width: 100%;
 }
 
-.inputWrap:first-child {
-  margin-bottom: 14px;
-}
+// .inputWrap:first-child {
+//   margin-bottom: 14px;
+// }
 
-.icon {
-  margin-right: 16px;
-}
+// .icon {
+//   margin-right: 16px;
+// }
