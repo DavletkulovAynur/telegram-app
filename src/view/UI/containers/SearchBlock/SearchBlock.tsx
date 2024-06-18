@@ -53,16 +53,12 @@ const SearchBlock: FC<IMobileFormProps> = ({
   };
 
   const setLocation = (locality: ILocalityEntity) => {
-    console.log("test", test);
     setModalLocalities(false);
     const currentOrigin = getValues(test);
-    console.log("locality", locality);
     setValue(test, { ...currentOrigin, id: locality.id, name: locality.name });
   };
 
   const openModal = (e: TYPE_POINT) => {
-    console.log();
-    console.log("e", e);
     setTest(e);
     getList();
     setModalLocalities(true);

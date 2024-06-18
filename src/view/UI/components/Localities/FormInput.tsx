@@ -3,7 +3,7 @@ import { TextField } from "@mui/material";
 import css from "./styles.module.scss";
 
 import { Control, Controller } from "react-hook-form";
-import { IFormData, TYPE_POINT } from "../../containers/SearchBlock/types";
+import { IFormData, POINT_PLACEHOLDER, TYPE_POINT } from "../../containers/SearchBlock/types";
 
 interface IProps {
   searchLocality: (event: string) => void;
@@ -24,8 +24,8 @@ const FormInput: FC<IProps> = ({ searchLocality, control, test }) => {
               {...field}
               // inputRef={originRef}
               fullWidth
-              placeholder={test}
-              label={test}
+              placeholder={POINT_PLACEHOLDER[test]}
+              label={POINT_PLACEHOLDER[test]}
               variant="outlined"
               value={value.name}
               onChange={(e) => {
