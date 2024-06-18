@@ -8,7 +8,6 @@ function CenterMode() {
     <div className={css.container}>
       <CalendarMonthIcon className={css.icon} fontSize="large" />
       <div className={css.title}>Событие недели</div>
-      <span className={css.subtitle}>башкортостан</span>
       <div className={css.eventBlock}>
         <img src={test} className={css.eventImg} />
         <div className={css.eventInfo}>

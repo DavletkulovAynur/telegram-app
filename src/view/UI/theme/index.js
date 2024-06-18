@@ -26,6 +26,17 @@ const components = {
       },
     },
   },
+  MuiIconButton: {
+    // Add this block
+    styleOverrides: {
+      root: {
+        color: tg?.themeParams.text_color || "#fff",
+        "&:hover": {
+          color: tg?.themeParams.text_color || "#fff",
+        },
+      },
+    },
+  },
 };
 
 const typography = {

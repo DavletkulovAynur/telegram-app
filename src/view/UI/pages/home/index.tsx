@@ -32,6 +32,7 @@ const Home: FC = observer(() => {
           <SettingsOutlinedIcon fontSize="medium" />
         </div>
 
+
         <IconButton onClick={handleOpenProfilePage} className={css.iconWrap}>
           <Person2OutlinedIcon fontSize="medium" />
         </IconButton>
