@@ -6,17 +6,24 @@
   // height: 2000px;
   background-color: var(
     --tg-theme-secondary-bg-color,
-    var(--yy-background-section)
+    var(--yy-background-paper)
   );
   border-radius: 20px;
-  padding: 8px 16px;
+  padding: 8px;
 }
 
 .locality {
   display: flex;
   align-items: center;
-  border-bottom: 1px solid var(--yy-grey-300);
-  padding: 12px 0;
+  // border-bottom: 1px solid var(--yy-grey-300);
+  // padding: 12px 0;
+  background-color: var(
+    --tg-theme-section-bg-color,
+    var(--yy-background-section)
+  );
+  border-radius: 20px;
+  padding: 16px;
+  margin-bottom: 8px;
 }
 
 .localitiesDistrict {
