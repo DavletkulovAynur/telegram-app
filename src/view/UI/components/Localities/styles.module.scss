@@ -1,3 +1,10 @@
+.loaderContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100px;
+}
+
 //
 .localities {
   width: 100%;
@@ -9,29 +16,18 @@
 .locality {
   display: flex;
   align-items: center;
-  border-bottom: 1px solid var(
-    --tg-theme-hint-color,
-    var(--yy-grey-a200)
-  );;
+  border-bottom: 1px solid var(--tg-theme-hint-color, var(--yy-grey-a400));
   padding: 12px;
-  // background-color: var(
-  //   --tg-theme-section-bg-color,
-  //   var(--yy-background-section)
-  // );
-  // border-radius: 10px;
-  // padding: 8px;
-  // margin-bottom: 8px;
 }
 
 .localitiesDistrict {
   font-size: 12px;
-  // margin-left: 12px;
+  color: var(--tg-theme-hint-color, var(--yy-grey-a200));
 }
 
 .localitiesName {
   font-size: 20px;
   font-weight: bold;
-  // margin-left: 12px;
 }
 //
 
@@ -53,11 +49,3 @@
   align-items: end;
   width: 100%;
 }
-
-// .inputWrap:first-child {
-//   margin-bottom: 14px;
-// }
-
-// .icon {
-//   margin-right: 16px;
-// }

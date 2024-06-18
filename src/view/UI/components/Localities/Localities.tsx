@@ -21,7 +21,7 @@ interface IProps {
   closeModal: () => void;
   control: Control<IFormData>;
   // loading: boolean;
-  test: TYPE_POINT
+  test: TYPE_POINT;
 }
 
 const Localities: React.FC<IProps> = ({
@@ -36,7 +36,11 @@ const Localities: React.FC<IProps> = ({
 }) => {
   return (
     <Modal isOpen={isOpen} closeModal={closeModal}>
-      <FormInput test={test} searchLocality={searchLocality} control={control} />
+      <FormInput
+        test={test}
+        searchLocality={searchLocality}
+        control={control}
+      />
       {loading ? (
         <div className={css.loaderContainer}>
           <CircularProgress />
@@ -46,7 +50,9 @@ const Localities: React.FC<IProps> = ({
           <LocalitiesList localities={localities} setLocation={setLocation} />
         </>
       ) : (
-        <p>Ничего не найдено</p>
+        <div className={css.loaderContainer}>
+          <p>Ничего не найдено</p>
+        </div>
       )}
     </Modal>
   );
