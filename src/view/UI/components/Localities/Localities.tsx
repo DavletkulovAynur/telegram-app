@@ -40,7 +40,12 @@ const Localities: React.FC<IProps> = ({
           <CircularProgress />
         </div>
       ) : localities && localities.length > 0 ? (
-        <LocalitiesList localities={localities} setLocation={setLocation} />
+        <>
+          <LocalitiesList localities={localities} setLocation={setLocation} />
+          <LocalitiesList localities={localities} setLocation={setLocation} />
+          <LocalitiesList localities={localities} setLocation={setLocation} />
+          <LocalitiesList localities={localities} setLocation={setLocation} />
+        </>
       ) : (
         <p>Ничего не найдено</p>
       )}
