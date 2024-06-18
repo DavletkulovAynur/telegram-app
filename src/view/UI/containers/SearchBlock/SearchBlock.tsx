@@ -22,6 +22,7 @@ const SearchBlock: FC<IMobileFormProps> = ({
   onSearch,
 }) => {
   const tg = useTelegram();
+  const [test, setTest] = useState<TYPE_POINT>(TYPE_POINT.origin);
   //TODO: ИСПРАВИТЬ В ПЕРВУЮ ОЧЕРЕДЬ (при изменение базы данных тут поменять наименования)
   const { getValues, control, setValue, watch } = useForm<IFormData>({
     defaultValues: {
@@ -37,6 +38,7 @@ const SearchBlock: FC<IMobileFormProps> = ({
     if (origin.id && destination.id) {
       onSearch({ originId: origin.id, destinationId: destination.id });
     }
+    console.log("super", origin.id, destination.id);
   }, [origin.id, destination.id]);
 
   //FIXME: переименовать
@@ -51,12 +53,17 @@ const SearchBlock: FC<IMobileFormProps> = ({
   };
 
   const setLocation = (locality: ILocalityEntity) => {
-    //TODO:  можем управлять фокусом, и так определять type
-    const currentOrigin = getValues("origin");
-    setValue("origin", { ...currentOrigin, id: locality.id });
+    console.log("test", test);
+    setModalLocalities(false);
+    const currentOrigin = getValues(test);
+    console.log("locality", locality);
+    setValue(test, { ...currentOrigin, id: locality.id, name: locality.name });
   };
 
-  const openModal = () => {
+  const openModal = (e: TYPE_POINT) => {
+    console.log();
+    console.log("e", e);
+    setTest(e);
     getList();
     setModalLocalities(true);
   };
@@ -101,6 +108,7 @@ const SearchBlock: FC<IMobileFormProps> = ({
 
       {/* TODO: это модальное окно!!! */}
       <Localities
+        test={test}
         isOpen={modalLocalities}
         localities={localities}
         loading={loading}

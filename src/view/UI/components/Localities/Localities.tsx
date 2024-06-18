@@ -6,7 +6,7 @@ import LocalitiesList from "./LocalitiesList";
 import { Modal } from "../modal";
 import FormInput from "./FormInput";
 import { Control } from "react-hook-form";
-import { IFormData } from "../../containers/SearchBlock/types";
+import { IFormData, TYPE_POINT } from "../../containers/SearchBlock/types";
 // import { CircularProgress } from "@mui/material";
 
 interface IProps {
@@ -21,6 +21,7 @@ interface IProps {
   closeModal: () => void;
   control: Control<IFormData>;
   // loading: boolean;
+  test: TYPE_POINT
 }
 
 const Localities: React.FC<IProps> = ({
@@ -31,19 +32,17 @@ const Localities: React.FC<IProps> = ({
   setLocation,
   searchLocality,
   control,
+  test,
 }) => {
   return (
     <Modal isOpen={isOpen} closeModal={closeModal}>
-      <FormInput searchLocality={searchLocality} control={control} />
+      <FormInput test={test} searchLocality={searchLocality} control={control} />
       {loading ? (
         <div className={css.loaderContainer}>
           <CircularProgress />
         </div>
       ) : localities && localities.length > 0 ? (
         <>
-          <LocalitiesList localities={localities} setLocation={setLocation} />
-          <LocalitiesList localities={localities} setLocation={setLocation} />
-          <LocalitiesList localities={localities} setLocation={setLocation} />
           <LocalitiesList localities={localities} setLocation={setLocation} />
         </>
       ) : (
