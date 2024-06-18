@@ -24,8 +24,9 @@ const SearchBlock: FC<IMobileFormProps> = ({
   const tg = useTelegram();
   const [activePoint, setActivePoint] = useState<TYPE_POINT>(TYPE_POINT.origin);
 
-  const { getValues, control, setValue, watch } = useForm<IFormData>({
+  const { control, setValue, watch } = useForm<IFormData>({
     defaultValues: {
+      //FIXME: Изменить как обновим базy
       origin: { id: "2", name: "Уфа" },
       destination: { id: null, name: "" },
     },
@@ -33,10 +34,6 @@ const SearchBlock: FC<IMobileFormProps> = ({
 
   const origin = watch("origin");
   const destination = watch("destination");
-
-  useEffect(() => {
-    console.log("origin", origin);
-  }, [origin]);
 
   useEffect(() => {
     if (origin.id && destination.id) {
