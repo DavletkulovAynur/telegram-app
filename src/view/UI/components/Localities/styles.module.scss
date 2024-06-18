@@ -3,6 +3,12 @@
   width: 100%;
   margin-top: 12px;
   overflow: scroll;
+  background-color: var(
+    --tg-theme-secondary-bg-color,
+    var(--yy-background-paper)
+  );
+  border-radius: 20px;
+  padding: 8px;
 }
 
 .locality {
@@ -12,18 +18,20 @@
     --tg-theme-section-bg-color,
     var(--yy-background-section)
   );
-  border-radius: 20px;
-  padding: 16px;
+  border-radius: 10px;
+  padding: 8px;
   margin-bottom: 8px;
 }
 
 .localitiesDistrict {
   font-size: 12px;
+  margin-left: 12px;
 }
 
 .localitiesName {
   font-size: 20px;
   font-weight: bold;
+  margin-left: 12px;
 }
 //
 
