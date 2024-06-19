@@ -1,6 +1,7 @@
 .container {
   position: relative;
-  margin-top: 20px;
+  margin-top: 32px;
+  margin-bottom: 32px;
   background-color: #000;
   border-radius: 20px;
   overflow: hidden;
@@ -9,6 +10,23 @@
 }
 
 .loup {
-  width: 100px;
-  height: 100px;
+  width: auto;
+  height: 182px;
+}
+
+.content {
+  padding: 16px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+  line-height: 1.1;
+}
+
+.description {
+  font-size: 12px;
+  margin: 12px 0;
+  color: #fff;
 }
