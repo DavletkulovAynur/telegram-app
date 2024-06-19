@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { TextField } from "@mui/material";
+import { TextField, InputAdornment } from "@mui/material";
 import css from "./styles.module.scss";
 
 import { Control, Controller } from "react-hook-form";
@@ -8,6 +8,7 @@ import {
   POINT_PLACEHOLDER,
   TYPE_POINT,
 } from "../../containers/SearchBlock/types";
+import PlaceOutlinedIcon from "@mui/icons-material/PlaceOutlined";
 
 interface IProps {
   searchLocality: (event: string) => void;
@@ -16,7 +17,6 @@ interface IProps {
 }
 
 const FormInput: FC<IProps> = ({ searchLocality, control, activePoint }) => {
-  //TODO: name + label
   return (
     <div className={css.formWrap}>
       <div className={css.inputWrap}>
@@ -36,6 +36,13 @@ const FormInput: FC<IProps> = ({ searchLocality, control, activePoint }) => {
                 const newValue = { id: null, name: e.target.value };
                 onChange(newValue);
                 searchLocality(e.target.value);
+              }}
+              InputProps={{
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <PlaceOutlinedIcon />
+                  </InputAdornment>
+                ),
               }}
             />
           )}
