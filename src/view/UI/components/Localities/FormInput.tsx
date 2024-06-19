@@ -32,6 +32,7 @@ const FormInput: FC<IProps> = ({ searchLocality, control, activePoint }) => {
               variant="outlined"
               value={value.name}
               onChange={(e) => {
+                //TODO: исправить заглушку
                 const newValue = { id: null, name: e.target.value };
                 onChange(newValue);
                 searchLocality(e.target.value);
