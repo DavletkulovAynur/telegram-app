@@ -1,5 +1,5 @@
 .container {
-  margin-top: 20px;
+  margin-top: 32px;
   background-color: var(--tg-theme-secondary-bg-color, #fff);
   padding: 16px;
   border-radius: 20px;
@@ -32,11 +32,12 @@
 
 .place {
   font-size: 12px;
-}
-
-.date {
   color: var(--tg-theme-hint-color, #848484);
 }
+
+// .date {
+//   color: var(--tg-theme-hint-color, #848484);
+// }
 
 .eventImg {
   width: 100px;
@@ -52,6 +53,7 @@
 .title {
   font-size: 24px;
   font-weight: bold;
+  margin-bottom: 8px;
 }
 
 .subtitle {

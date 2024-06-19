@@ -8,7 +8,7 @@ import {
   POINT_PLACEHOLDER,
   TYPE_POINT,
 } from "../../containers/SearchBlock/types";
-import PlaceOutlinedIcon from "@mui/icons-material/PlaceOutlined";
+import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 
 interface IProps {
   searchLocality: (event: string) => void;
@@ -40,7 +40,7 @@ const FormInput: FC<IProps> = ({ searchLocality, control, activePoint }) => {
               InputProps={{
                 startAdornment: (
                   <InputAdornment position="start">
-                    <PlaceOutlinedIcon />
+                    <SearchOutlinedIcon />
                   </InputAdornment>
                 ),
               }}

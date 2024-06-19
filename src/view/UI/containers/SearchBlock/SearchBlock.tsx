@@ -10,7 +10,7 @@ import {
   POINT_PLACEHOLDER,
 } from "./types";
 import SearchIcon from "@mui/icons-material/Search";
-import logo from "../../assets/logo.png";
+import logo from "../../assets/logo2.png";
 import InputItem from "./InputItem";
 import Localities from "../../components/Localities";
 import { useTelegram } from "../../hooks";
@@ -74,7 +74,7 @@ const SearchBlock: FC<IMobileFormProps> = ({
         <img
           height={60}
           width={60}
-          className={css.logo}
+          className={`${css.logo} ${themeClass}`}
           src={logo}
           alt="logo"
         />
