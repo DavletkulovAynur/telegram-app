@@ -11,7 +11,10 @@
   position: relative;
 }
 .dark {
-  background-color: #3c5a6b;
+  background-color: var(
+    --tg-theme-section-bg-color,
+    var(--yy-background-section)
+  );
 }
 
 .light {
@@ -64,11 +67,6 @@
   margin-left: 12px;
 }
 
-//FIXME: НЕТ переменной
-.darkThemeContainer {
-  background: var(red) !important;
-}
-
 .line {
   width: 100%;
   height: 1px;
@@ -77,23 +75,23 @@
 
 .localityWrap {
   padding: 6px 6px;
-  color: var(--yy-grey-500);
   margin: 6px 0;
 }
 
-.localityWrapError {
-  background: var(--yy-error-light);
-  border-radius: 2px;
-}
-
 .localityName {
-  color: var(--yy-text-primary);
   font-size: 16px;
   font-weight: bold;
 }
 
 .notMarkedLocalityName {
+  color: var(--tg-theme-hint-color, var(--yy-grey-a400));
   font-size: 16px;
+  font-weight: bold;
+}
+
+.typeWriterWrap {
+  color: var(--tg-theme-hint-color, var(--yy-grey-a400));
+  display: flex;
   font-weight: bold;
 }
 // --- //

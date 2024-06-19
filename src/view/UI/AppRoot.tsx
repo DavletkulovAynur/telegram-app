@@ -25,7 +25,6 @@ export const AppRoot: FC<{ themes: IAppInitConfig["themes"] }> = observer(
           <CssBaseline />
           <StyledEngineProvider injectFirst>
             <ErrorBoundary>
-              {/* <Header onGoHome={handleGoHome} /> */}
               <Body>
                 <App />
               </Body>

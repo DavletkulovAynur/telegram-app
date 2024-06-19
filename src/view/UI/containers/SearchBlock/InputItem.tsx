@@ -24,7 +24,7 @@ const InputItem: FC<IProps> = ({
         <span className={css.notMarkedLocalityName}>{placeholderHTML}</span>
       )}
       {!point.id && typePoint === TYPE_POINT.destination && (
-        <div className={css.testWrap}>
+        <div className={css.typeWriterWrap}>
           Куда&nbsp;-&nbsp;
           <Typewriter
             texts={[
