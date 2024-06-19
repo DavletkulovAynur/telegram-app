@@ -10,9 +10,11 @@
   border-radius: 20px;
   position: relative;
 }
+
+//FIXME: исправить цвета для основной темы 
 .dark {
   background-color: var(
-    --tg-theme-section-bg-color,
+    --tg-theme-secondary-bg-color,
     var(--yy-background-section)
   );
 }
@@ -20,7 +22,7 @@
 .light {
   background-color: #89cffb;
 }
-//
+// ______ //
 
 .mobileContainer {
   border-radius: 20px;
