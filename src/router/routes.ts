@@ -28,7 +28,6 @@ const routes: IRoutes = [
       }
 
       const { originId, destinationId } = params;
-
       store.order.getList({
         originId,
         destinationId,

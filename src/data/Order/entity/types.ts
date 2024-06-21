@@ -21,4 +21,6 @@ export interface IOrderResponseDTO
 export interface IOrderRequestParams {
   originId?: ID;
   destinationId?: ID;
+  originName?: string;
+  destinationName?: string;
 }

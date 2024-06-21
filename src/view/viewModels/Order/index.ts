@@ -22,7 +22,7 @@ export class OrderVM extends BaseVM implements IOrderVM {
   async getList(params: IOrderRequestParams) {
     this.setLoading();
     this.unsetError();
-
+    console.log("order getList");
     try {
       this.orderList = await this.service.getOrderList(params);
     } catch (err) {

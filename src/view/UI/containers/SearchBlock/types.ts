@@ -14,7 +14,7 @@ export type TPoint = TYPE_POINT.destination | TYPE_POINT.origin;
 
 export type TFormDataPoint = {
   id: ID | null;
-  name: string | null;
+  name: string;
 };
 export interface IFormData {
   origin: TFormDataPoint;
@@ -24,12 +24,11 @@ export interface IFormData {
 export type TSearchLocalityParams = {
   originId: ID;
   destinationId: ID;
+  originName: string;
+  destinationName: string;
 };
 
 export interface IMobileFormProps {
-  localities: ILocalityEntity[] | null;
-  getList: (value?: string) => void;
-  loading: boolean;
   onSearch: (data: TSearchLocalityParams) => void;
 }
 
