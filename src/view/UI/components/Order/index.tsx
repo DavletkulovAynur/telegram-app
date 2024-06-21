@@ -33,7 +33,6 @@ export const Order: FC<IOrderProps> = ({ agency, price }) => {
                   {/* <Button size="small" className={css.copyButton}>
                     {copied[phone] ? "Скопировано" : "Копировать"}
                   </Button> */}
-
                   <IconButton>
                     <ContentCopyOutlinedIcon />
                   </IconButton>

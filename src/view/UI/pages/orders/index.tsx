@@ -1,6 +1,6 @@
-import { FC, useMemo } from "react";
+import { FC, useMemo, useEffect } from "react";
 import { useRouteNode } from "react-router5";
-import { useViewModel } from "../../hooks";
+import { useTelegram, useViewModel } from "../../hooks";
 import { observer } from "mobx-react-lite";
 import Error from "./components/Error";
 import Loading from "./components/Loading/Loading";
@@ -12,6 +12,7 @@ import { ERouteNames } from "../../../../router/routes";
 import { OrderPageSearch } from "../../containers/SearchBlock";
 
 const Orders: FC = observer(() => {
+  const tg = useTelegram();
   const orderVM = useViewModel("order");
   const {
     route: { params },
@@ -21,6 +22,16 @@ const Orders: FC = observer(() => {
   const handleSearch: SubmitHandler<IFormData> = (data) => {
     navigate(ERouteNames.ORDERS, data);
   };
+
+  useEffect(() => {
+    if (!tg) return;
+
+    tg.BackButton.show();
+    tg.BackButton.onClick(() => {
+      navigate(ERouteNames.HOME);
+      tg.BackButton.hide();
+    });
+  }, []);
 
   const routeParams = useMemo(() => {
     return {
