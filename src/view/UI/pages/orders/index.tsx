@@ -23,21 +23,18 @@ const Orders: FC = observer(() => {
   };
 
   const routeParams = useMemo(() => {
-      return {
-        originId: params.originId,
-        originName: params.originName,
-        destinationId: params.destinationId,
-        destinationName: params.destinationName
-      }
-  }, [params])
+    return {
+      originId: params.originId,
+      originName: params.originName,
+      destinationId: params.destinationId,
+      destinationName: params.destinationName,
+    };
+  }, [params]);
   return (
     <>
       <div className={css.page}>
         <div className={css.searchForm}>
-          <OrderPageSearch
-            onSearch={handleSearch}
-            routeParams={routeParams}
-          />
+          <OrderPageSearch onSearch={handleSearch} routeParams={routeParams} />
         </div>
 
         <div className={css.list}>

@@ -74,9 +74,10 @@ const OrderPageSearch: FC<IProps> = observer(({ onSearch, routeParams }) => {
     setIsModalOpen(true);
   };
 
+  //FIXME: background
   return (
     <div className={css.orderPageSearch}>
-      <Paper elevation={0} className={css.mobileContainer}>
+      <Paper elevation={0} className={css.orderPageSearchContainer}>
         <SearchIcon fontSize="large" />
         <div className={css.inputsWrapper}>
           <InputItem

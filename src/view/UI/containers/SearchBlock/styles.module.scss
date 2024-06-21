@@ -36,6 +36,18 @@
   );
 }
 
+.orderPageSearchContainer {
+  border-radius: 20px;
+  padding: 12px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background-color: var(
+    --tg-theme-secondary-bg-color,
+    var(--yy-background-section)
+  );
+}
+
 // localities
 .localitiesContainer {
   padding: 0 12px;
@@ -141,10 +153,9 @@
   font-weight: bold;
 }
 
-
 //orderPageSearch
 .orderPageSearch {
   width: 100%;
   position: relative;
-  top: 20px
+  top: 20px;
 }

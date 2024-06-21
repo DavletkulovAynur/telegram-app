@@ -38,7 +38,7 @@ const SearchBlock: FC<IMobileFormProps> = observer(({ onSearch }) => {
       //тут запускаем первый раз
       onSearch({ originId: origin.id, destinationId: destination.id, originName: origin.name, destinationName: destination.name });
     }
-  }, [origin.id, destination.id, onSearch]);
+  }, [origin.id, destination.id]);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
