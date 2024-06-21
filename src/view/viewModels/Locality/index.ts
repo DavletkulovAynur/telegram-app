@@ -34,7 +34,6 @@ export class LocalityVM extends BaseVM implements ILocalityVM {
 
     try {
       const list = await this._debouncedGetList({ search });
-
       runInAction(() => {
         this._localities = list;
       });
@@ -44,6 +43,8 @@ export class LocalityVM extends BaseVM implements ILocalityVM {
       this.unsetLoading();
     }
   };
+
+  //TODO: отправить запрос и получить конкретный locality
 
   destroy = (): void => {
     this._localities = null;

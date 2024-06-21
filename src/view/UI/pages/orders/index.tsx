@@ -1,5 +1,4 @@
-import { FC } from "react";
-import { SearchForm } from "../../components/SearchForm";
+import { FC, useMemo } from "react";
 import { useRouteNode } from "react-router5";
 import { useViewModel } from "../../hooks";
 import { observer } from "mobx-react-lite";
@@ -10,12 +9,10 @@ import { SubmitHandler } from "react-hook-form";
 import { IFormData } from "../../components/SearchForm/types";
 import css from "./styles.module.scss";
 import { ERouteNames } from "../../../../router/routes";
-import { AddAgencyChip } from "../../components/AddAgencyChip";
-import { ECategories } from "../../../../libs";
+import { OrderPageSearch } from "../../containers/SearchBlock";
 
 const Orders: FC = observer(() => {
   const orderVM = useViewModel("order");
-  const localityVM = useViewModel("locality");
   const {
     route: { params },
     router: { navigate },
@@ -25,27 +22,21 @@ const Orders: FC = observer(() => {
     navigate(ERouteNames.ORDERS, data);
   };
 
-  const originEntity = localityVM.localities?.find(
-    (item) => item.id === Number(params.originId),
-  );
-
-  const destinationEntity = localityVM.localities?.find(
-    (item) => item.id === Number(params.destinationId),
-  );
-
+  const routeParams = useMemo(() => {
+      return {
+        originId: params.originId,
+        originName: params.originName,
+        destinationId: params.destinationId,
+        destinationName: params.destinationName
+      }
+  }, [params])
   return (
     <>
       <div className={css.page}>
         <div className={css.searchForm}>
-          <SearchForm
-            gaCategory={ECategories.ORDERS}
-            minified
-            localities={localityVM.localities}
-            loading={orderVM.loading || localityVM.loading}
-            localitiesLoading={localityVM.loading}
-            destination={destinationEntity}
-            origin={originEntity}
+          <OrderPageSearch
             onSearch={handleSearch}
+            routeParams={routeParams}
           />
         </div>
 
@@ -59,7 +50,6 @@ const Orders: FC = observer(() => {
           )}
         </div>
       </div>
-      <AddAgencyChip />
     </>
   );
 });

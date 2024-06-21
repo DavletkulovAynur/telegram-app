@@ -9,14 +9,11 @@ import { IconButton } from "@mui/material";
 
 import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import Person2OutlinedIcon from "@mui/icons-material/Person2Outlined";
-import { useViewModel } from "../../hooks";
 import Event from "./events";
 import TaxiOffer from "./taxiOffer";
 
-
 const Home: FC = observer(() => {
   const { navigate } = useRouter();
-  const { localities, loading, getList } = useViewModel("locality");
 
   const handleSearch: SubmitHandler<IFormData> = (data) => {
     navigate("orders", data);
@@ -32,17 +29,11 @@ const Home: FC = observer(() => {
           <SettingsOutlinedIcon fontSize="medium" />
         </div>
 
-
         <IconButton onClick={handleOpenProfilePage} className={css.iconWrap}>
           <Person2OutlinedIcon fontSize="medium" />
         </IconButton>
       </header>
-      <SearchBlock
-        onSearch={handleSearch}
-        localities={localities}
-        getList={getList}
-        loading={loading}
-      />
+      <SearchBlock onSearch={handleSearch} />
       <Event />
       <TaxiOffer />
     </>
