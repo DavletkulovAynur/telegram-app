@@ -1,19 +1,20 @@
-import * as React from "react";
-import Button from "@mui/material/Button";
+import {FC, forwardRef} from "react";
 import Dialog from "@mui/material/Dialog";
-import ListItemText from "@mui/material/ListItemText";
-import ListItemButton from "@mui/material/ListItemButton";
 import List from "@mui/material/List";
-import Divider from "@mui/material/Divider";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import CloseIcon from "@mui/icons-material/Close";
+import Button from "@mui/material/Button";
 import Slide from "@mui/material/Slide";
 import { TransitionProps } from "@mui/material/transitions";
+import { useForm, Controller } from "react-hook-form";
+import { TextField } from "@mui/material";
 
-const Transition = React.forwardRef(function Transition(
+import css from "./styles.module.scss";
+import { TOfferFormFields } from "./types";
+const Transition = forwardRef(function Transition(
   props: TransitionProps & {
     children: React.ReactElement;
   },
@@ -22,26 +23,24 @@ const Transition = React.forwardRef(function Transition(
   return <Slide direction="up" ref={ref} {...props} />;
 });
 
-export default function FullScreenDialog() {
-  const [open, setOpen] = React.useState(true);
+interface IProps {
+  isOpen: boolean;
+  closeDialog: () => void;
+}
+const FullScreenDialog: FC<IProps> = ({isOpen, closeDialog}) => {
+  //FORM
+  const { control, handleSubmit } = useForm<TOfferFormFields>();
 
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
+  const sendData = (data: TOfferFormFields) => {
+    console.log("test", data);
   };
 
   return (
-    <React.Fragment>
-      <Button variant="outlined" onClick={handleClickOpen}>
-        Open full-screen dialog
-      </Button>
+    <>
       <Dialog
         fullScreen
-        open={open}
-        onClose={handleClose}
+        open={isOpen}
+        onClose={closeDialog}
         TransitionComponent={Transition}
       >
         <AppBar sx={{ position: "relative" }}>
@@ -49,32 +48,78 @@ export default function FullScreenDialog() {
             <IconButton
               edge="start"
               color="inherit"
-              onClick={handleClose}
+              onClick={closeDialog}
               aria-label="close"
             >
               <CloseIcon />
             </IconButton>
             <Typography sx={{ ml: 2, flex: 1 }} variant="h6" component="div">
-              Sound
+              Предложить агентство
             </Typography>
-            <Button autoFocus color="inherit" onClick={handleClose}>
-              save
-            </Button>
           </Toolbar>
         </AppBar>
-        <List>
-          <ListItemButton>
-            <ListItemText primary="Phone ringtone" secondary="Titania" />
-          </ListItemButton>
-          <Divider />
-          <ListItemButton>
-            <ListItemText
-              primary="Default notification ringtone"
-              secondary="Tethys"
-            />
-          </ListItemButton>
+        <List className={css.formWrap}>
+          <form onSubmit={handleSubmit(sendData)}>
+            <div className={css.inputWrap}>
+              <Controller
+                name="name"
+                control={control}
+                rules={{ required: "Это поле обязательно" }}
+                render={({ field, fieldState: { error } }) => (
+                  <TextField
+                    {...field}
+                    fullWidth
+                    placeholder={"Название *"}
+                    label={"Название *"}
+                    variant="outlined"
+                    error={!!error}
+                  />
+                )}
+              />
+            </div>
+            <div className={css.inputWrap}>
+              <Controller
+                name="phone"
+                control={control}
+                rules={{ required: "Это поле обязательно" }}
+                render={({ field, fieldState: { error } }) => (
+                  <TextField
+                    {...field}
+                    fullWidth
+                    placeholder={"Телефон *"}
+                    label={"Телефон *"}
+                    variant="outlined"
+                    error={!!error}
+                  />
+                )}
+              />
+            </div>
+            <div className={css.inputWrap}>
+              <Controller
+                name="description"
+                control={control}
+                render={({ field }) => (
+                  <TextField
+                    {...field}
+                    fullWidth
+                    placeholder={"Описание"}
+                    label={"Описание"}
+                    variant="outlined"
+                    multiline
+                    rows={4}
+                  />
+                )}
+              />
+            </div>
+
+            <Button type="submit" fullWidth color="primary" variant="contained">
+              Отправить
+            </Button>
+          </form>
         </List>
       </Dialog>
-    </React.Fragment>
+    </>
   );
 }
+
+export default FullScreenDialog
