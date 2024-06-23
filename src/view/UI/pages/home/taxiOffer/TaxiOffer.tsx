@@ -22,7 +22,7 @@ const TaxiOffer = () => {
           <div className={css.description}>
             Мы будем благодарны за вашу помощь!
           </div>
-          <Button color="secondary" variant="outlined">
+          <Button color="primary" variant="outlined">
             Написать
           </Button>
         </div>
