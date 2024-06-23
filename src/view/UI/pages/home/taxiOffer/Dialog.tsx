@@ -43,7 +43,7 @@ const FullScreenDialog: FC<IProps> = ({isOpen, closeDialog}) => {
         onClose={closeDialog}
         TransitionComponent={Transition}
       >
-        <AppBar sx={{ position: "relative" }}>
+        <AppBar className={css.appBar} sx={{ position: "relative" }}>
           <Toolbar>
             <IconButton
               edge="start"

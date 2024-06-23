@@ -36,7 +36,13 @@
   padding: 32px 16px;
 }
 
+.appBar {
+  background-color: var(
+    --tg-theme-secondary-bg-color,
+    var(--yy-background-paper)
+  );
+}
+
 .inputWrap {
   margin-bottom: 16px;
 }
-

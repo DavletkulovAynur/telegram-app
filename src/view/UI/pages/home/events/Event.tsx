@@ -13,10 +13,9 @@ function CenterMode() {
         <div className={css.eventInfo}>
           <div className={css.price}>RUB 3500</div>
           <div className={css.place}>Гафурийский район, Уклы Кая</div>
-          {/* <div className={css.date}>Сб, 22.06 - Вс, 23.06</div> */}
         </div>
       </div>
-      <Button className={css.button} color="primary" variant="contained">
+      <Button className={css.button} color="primary" variant="outlined">
         Поскакали
       </Button>
     </div>
