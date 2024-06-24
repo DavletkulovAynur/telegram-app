@@ -7,7 +7,7 @@ import { Button } from "@mui/material";
 import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
 import css from "./styles.module.scss";
 
-import test from "../../assets/testImg/test.jpeg";
+import testGig from "../../assets/testImg/yH.gif";
 
 const Profile: FC = observer(() => {
   const { tg, isTelegramExist } = useTelegram();
@@ -19,7 +19,7 @@ const Profile: FC = observer(() => {
   useEffect(() => {
     tg.BackButton.show();
     tg.BackButton.onClick(() => {
-      goToMainPage;
+      goToMainPage();
       tg.BackButton.hide();
     });
   }, []);
@@ -36,14 +36,26 @@ const Profile: FC = observer(() => {
           Назад
         </Button>
       )}
-      <h1>ПРОФИЛЬ</h1>
-      <img src={test} className={css.img} />
+      {/* <h1>ПРОФИЛЬ</h1> */}
+      {/* <img src={test} className={css.img} />
       <p>
         Приносим свои извинения за временные неудобства. Наша команда трудится
         не покладая рук, чтобы сделать эту страницу незабываемой. Скоро здесь
         появится что-то особенное, что заставит вас улыбнуться и остановиться на
         мгновение. Благодарим за ваше терпение и понимание.
-      </p>
+      </p> */}
+      <div className={css.headerTitle}>История поездок</div>
+      <div className={css.content}>
+        <div className={css.imgWrap}>
+          <img src={testGig} className={css.img} />
+        </div>
+
+        <div className={css.title}>У вас пока нет поездок</div>
+        <div className={css.description}>
+          Все ваши поездки будут <br />
+          отображаться здесь
+        </div>
+      </div>
     </div>
   );
 });
