@@ -8,6 +8,7 @@ import "./style.css";
 const HomePage = lazy(() => import("./pages/home"));
 const ProfilePage = lazy(() => import("./pages/profile"));
 const OrdersPage = lazy(() => import("./pages/orders"));
+const SettingPage = lazy(() => import("./pages/setting"));
 const NotFoundPage = lazy(() => import("./pages/notFound"));
 
 export const App: FC = () => {
@@ -26,6 +27,9 @@ export const App: FC = () => {
 
     case ERouteNames.PROFILE:
       page = <ProfilePage />;
+      break;
+    case ERouteNames.SETTING:
+      page = <SettingPage />;
       break;
 
     case constants.UNKNOWN_ROUTE:

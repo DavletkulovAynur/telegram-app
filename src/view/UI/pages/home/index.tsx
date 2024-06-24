@@ -22,12 +22,16 @@ const Home: FC = observer(() => {
   const handleOpenProfilePage = () => {
     navigate("profile");
   };
+
+  const handleOpenSettingPage = () => {
+    navigate("setting");
+  };
   return (
     <>
       <header className={css.header}>
-        <div className={css.iconWrap}>
+        <IconButton onClick={handleOpenSettingPage} className={css.iconWrap}>
           <SettingsOutlinedIcon fontSize="medium" />
-        </div>
+        </IconButton>
 
         <IconButton onClick={handleOpenProfilePage} className={css.iconWrap}>
           <Person2OutlinedIcon fontSize="medium" />

@@ -7,9 +7,7 @@ import { Button } from "@mui/material";
 import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
 import css from "./styles.module.scss";
 
-import testGig from "../../assets/testImg/test.gif";
-
-const Profile: FC = observer(() => {
+const Setting: FC = observer(() => {
   const { tg, isTelegramExist } = useTelegram();
   const { navigate } = useRouter();
 
@@ -36,20 +34,20 @@ const Profile: FC = observer(() => {
           Назад
         </Button>
       )}
-      <div className={css.headerTitle}>История поездок</div>
+      <div className={css.headerTitle}>Настройки</div>
       <div className={css.content}>
         <div className={css.imgWrap}>
-          <img src={testGig} className={css.img} />
+          <img src="https://i.gifer.com/2GU.gif" className={css.img} />
         </div>
 
-        <div className={css.title}>У вас пока нет поездок</div>
+        <div className={css.title}>В процессе обновления</div>
         <div className={css.description}>
-          Все ваши поездки будут <br />
-          отображаться здесь
+          Наша команда трудится не покладая рук, чтобы сделать эту страницу
+          незабываемой.
         </div>
       </div>
     </div>
   );
 });
 
-export default Profile;
+export default Setting;

@@ -5,6 +5,7 @@ export enum ERouteNames {
   ORDERS = "orders",
   HOME = "home",
   PROFILE = "profile",
+  SETTING = "setting"
 }
 
 const routes: IRoutes = [
@@ -18,6 +19,10 @@ const routes: IRoutes = [
   {
     name: ERouteNames.PROFILE,
     path: "/profile",
+  },
+  {
+    name: ERouteNames.SETTING,
+    path: "/setting",
   },
   {
     name: ERouteNames.ORDERS,
