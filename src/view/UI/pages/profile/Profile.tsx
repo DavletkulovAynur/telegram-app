@@ -7,7 +7,7 @@ import { Button } from "@mui/material";
 import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
 import css from "./styles.module.scss";
 
-import testGig from "../../assets/testImg/yH.gif";
+import testGig from "../../assets/testImg/test.gif";
 
 const Profile: FC = observer(() => {
   const { tg, isTelegramExist } = useTelegram();
