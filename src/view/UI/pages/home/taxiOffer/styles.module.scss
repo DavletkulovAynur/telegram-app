@@ -41,6 +41,7 @@
     --tg-theme-secondary-bg-color,
     var(--yy-background-paper)
   );
+  color: var(--tg-theme-text-color, var(--yy-text-primary));
 }
 
 .inputWrap {

@@ -34,3 +34,5 @@ const TaxiOffer = () => {
 };
 
 export default TaxiOffer;
+
+//6 500 

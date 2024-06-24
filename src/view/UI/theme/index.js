@@ -2,7 +2,7 @@ import { createTheme } from "@mui/material";
 
 //TODO: возможно есть решение получше
 const tg = window?.Telegram?.WebApp;
-//FIXME: стили подправить
+
 const components = {
   MuiPaper: {
     styleOverrides: {
@@ -26,25 +26,11 @@ const components = {
       },
     },
   },
-  MuiIconButton: {
-    // Add this block
-    styleOverrides: {
-      root: {
-        color: tg?.themeParams.text_color || "#fff",
-        "&:hover": {
-          color: tg?.themeParams.text_color || "#fff",
-        },
-      },
-    },
-  },
 };
 
 const typography = {
   button: {
     textTransform: "none",
-  },
-  body1: {
-    color: tg?.themeParams.text_color || "#cf3247 ", // Цвет текста по умолчанию
   },
 };
 
@@ -64,6 +50,19 @@ export const lightTheme = createTheme({
   },
   components,
   typography,
+  body1: {
+    color: tg?.themeParams.text_color || "#000 ", // Цвет текста по умолчанию
+  },
+  MuiIconButton: {
+    styleOverrides: {
+      root: {
+        color: tg?.themeParams.text_color || "#000",
+        "&:hover": {
+          color: tg?.themeParams.text_color || "#000",
+        },
+      },
+    },
+  },
 });
 
 export const darkTheme = createTheme({
@@ -78,16 +77,19 @@ export const darkTheme = createTheme({
       main: "#a48aec",
     },
   },
-  components: {
-    components,
-    MuiAppBar: {
-      styleOverrides: {
-        root: {
-          backgroundColor: "#272727",
-          backgroundImage: "none",
+  components,
+  typography,
+  MuiIconButton: {
+    styleOverrides: {
+      root: {
+        color: tg?.themeParams.text_color || "#fff",
+        "&:hover": {
+          color: tg?.themeParams.text_color || "#fff",
         },
       },
     },
   },
-  typography,
+  body1: {
+    color: tg?.themeParams.text_color || "#fff ", // Цвет текста по умолчанию
+  },
 });

@@ -1,4 +1,4 @@
-import {FC, forwardRef} from "react";
+import { FC, forwardRef } from "react";
 import Dialog from "@mui/material/Dialog";
 import List from "@mui/material/List";
 import AppBar from "@mui/material/AppBar";
@@ -27,7 +27,7 @@ interface IProps {
   isOpen: boolean;
   closeDialog: () => void;
 }
-const FullScreenDialog: FC<IProps> = ({isOpen, closeDialog}) => {
+const FullScreenDialog: FC<IProps> = ({ isOpen, closeDialog }) => {
   //FORM
   const { control, handleSubmit } = useForm<TOfferFormFields>();
 
@@ -45,12 +45,7 @@ const FullScreenDialog: FC<IProps> = ({isOpen, closeDialog}) => {
       >
         <AppBar className={css.appBar} sx={{ position: "relative" }}>
           <Toolbar>
-            <IconButton
-              edge="start"
-              color="inherit"
-              onClick={closeDialog}
-              aria-label="close"
-            >
+            <IconButton edge="start" onClick={closeDialog} aria-label="close">
               <CloseIcon />
             </IconButton>
             <Typography sx={{ ml: 2, flex: 1 }} variant="h6" component="div">
@@ -120,6 +115,6 @@ const FullScreenDialog: FC<IProps> = ({isOpen, closeDialog}) => {
       </Dialog>
     </>
   );
-}
+};
 
-export default FullScreenDialog
+export default FullScreenDialog;
