@@ -1,10 +1,11 @@
-import { TelegramWebApp } from "../../../../global";
+import { Telegram } from "../../../telegramTypes";
 
-let tg: TelegramWebApp | null = null;
+const tg: Telegram["WebApp"] = window.Telegram.WebApp;
 
-if (window.Telegram) {
-  tg = window.Telegram.WebApp;
-}
 export const useTelegram = () => {
-  return tg
-}
+  const isTelegramExist = Boolean(tg && tg.initData);
+  return {
+    tg,
+    isTelegramExist,
+  };
+};

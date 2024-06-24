@@ -3,24 +3,39 @@ import { observer } from "mobx-react-lite";
 import { useTelegram } from "../../hooks";
 import { useRouter } from "react-router5";
 import { ERouteNames } from "../../../../router/routes";
+import { Button } from "@mui/material";
+import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
+import css from "./styles.module.scss";
 
 const Profile: FC = observer(() => {
-  const tg = useTelegram();
+  const { tg, isTelegramExist } = useTelegram();
   const { navigate } = useRouter();
 
+  const goToMainPage = () => {
+    navigate(ERouteNames.HOME);
+  };
   useEffect(() => {
-    if (!tg) return;
-
     tg.BackButton.show();
     tg.BackButton.onClick(() => {
-      navigate(ERouteNames.HOME);
+      goToMainPage;
       tg.BackButton.hide();
     });
   }, []);
+
   return (
-    <>
+    <div className={css.container}>
+      {!isTelegramExist && (
+        <Button
+          onClick={goToMainPage}
+          variant="text"
+          color="secondary"
+          startIcon={<NavigateBeforeIcon />}
+        >
+          Назад
+        </Button>
+      )}
       <h1>PROFILE</h1>
-    </>
+    </div>
   );
 });
 
