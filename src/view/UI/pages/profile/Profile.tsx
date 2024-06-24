@@ -7,6 +7,8 @@ import { Button } from "@mui/material";
 import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
 import css from "./styles.module.scss";
 
+import test from "../../assets/testImg/test.jpeg";
+
 const Profile: FC = observer(() => {
   const { tg, isTelegramExist } = useTelegram();
   const { navigate } = useRouter();
@@ -34,7 +36,14 @@ const Profile: FC = observer(() => {
           Назад
         </Button>
       )}
-      <h1>PROFILE</h1>
+      <h1>ПРОФИЛЬ</h1>
+      <img src={test} className={css.img} />
+      <p>
+        Приносим свои извинения за временные неудобства. Наша команда трудится
+        не покладая рук, чтобы сделать эту страницу незабываемой. Скоро здесь
+        появится что-то особенное, что заставит вас улыбнуться и остановиться на
+        мгновение. Благодарим за ваше терпение и понимание.
+      </p>
     </div>
   );
 });
