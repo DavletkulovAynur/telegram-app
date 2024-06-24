@@ -1,4 +1,4 @@
-import { FC, StrictMode } from "react";
+import { FC, StrictMode, useEffect } from "react";
 import { observer } from "mobx-react-lite";
 import { useTelegram } from "./hooks";
 import {
@@ -13,7 +13,12 @@ import { IAppInitConfig } from "./types.ts";
 
 export const AppRoot: FC<{ themes: IAppInitConfig["themes"] }> = observer(
   ({ themes }) => {
-    const tg = useTelegram();
+    const { tg } = useTelegram();
+
+    //TODO: глобально нужно проверять объект телеграм
+    useEffect(() => {
+      tg.ready();
+    }, [tg]);
 
     const [lightTheme, darkTheme] = themes;
 

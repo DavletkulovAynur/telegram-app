@@ -12,7 +12,7 @@ import { ERouteNames } from "../../../../router/routes";
 import { OrderPageSearch } from "../../containers/SearchBlock";
 
 const Orders: FC = observer(() => {
-  const tg = useTelegram();
+  const { tg } = useTelegram();
   const orderVM = useViewModel("order");
   const {
     route: { params },
@@ -24,8 +24,6 @@ const Orders: FC = observer(() => {
   };
 
   useEffect(() => {
-    if (!tg) return;
-
     tg.BackButton.show();
     tg.BackButton.onClick(() => {
       navigate(ERouteNames.HOME);

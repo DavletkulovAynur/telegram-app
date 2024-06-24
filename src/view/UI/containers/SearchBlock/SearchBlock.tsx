@@ -17,7 +17,7 @@ import { useTelegram, useViewModel } from "../../hooks";
 import { observer } from "mobx-react-lite";
 
 const SearchBlock: FC<IMobileFormProps> = observer(({ onSearch }) => {
-  const tg = useTelegram();
+  const { tg } = useTelegram();
   const [activePoint, setActivePoint] = useState<TYPE_POINT>(TYPE_POINT.origin);
   //LOCALITIES
   const { localities, loading, getList } = useViewModel("locality");

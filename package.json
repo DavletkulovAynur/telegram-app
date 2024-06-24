@@ -19,6 +19,7 @@
     "@mui/material": "^5.14.18",
     "@mui/x-date-pickers": "^6.18.2",
     "@types/node": "^20.10.0",
+    "@types/telegram-web-app": "^7.2.1",
     "date-fns": "^2.30.0",
     "framer-motion": "^10.16.5",
     "mobx": "^6.11.0",

@@ -11,11 +11,9 @@ interface IProps {
 }
 
 const Modal: React.FC<IProps> = ({ isOpen, children, closeModal }) => {
-  const tg = useTelegram();
+  const { tg } = useTelegram();
 
   useEffect(() => {
-    if (!tg) return;
-
     if (isOpen) {
       tg.BackButton.show();
       tg.BackButton.onClick(() => {
