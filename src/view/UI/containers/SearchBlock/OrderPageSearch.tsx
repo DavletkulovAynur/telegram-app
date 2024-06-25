@@ -21,7 +21,6 @@ interface IProps {
 }
 const OrderPageSearch: FC<IProps> = observer(({ onSearch, routeParams }) => {
   const [activePoint, setActivePoint] = useState<TYPE_POINT>(TYPE_POINT.origin);
-  //LOCALITIES
   const { localities, loading, getList } = useViewModel("locality");
 
   const { control, setValue, watch } = useForm<IFormData>({
@@ -40,11 +39,12 @@ const OrderPageSearch: FC<IProps> = observer(({ onSearch, routeParams }) => {
 
   useEffect(() => {
     if (origin.id && destination.id) {
+      console.log("origin", origin);
       onSearch({
         originId: origin.id,
         destinationId: destination.id,
-        originName: routeParams.originName,
-        destinationName: routeParams.destinationName,
+        originName: origin.name,
+        destinationName: destination.name,
       });
     }
   }, [origin.id, destination.id]);

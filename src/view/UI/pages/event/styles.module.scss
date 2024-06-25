@@ -31,3 +31,13 @@
   border: none;
   border-radius: 20px;
 }
+
+.phoneContainer {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.phone {
+  font-weight: bold;
+}

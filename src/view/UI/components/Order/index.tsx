@@ -1,22 +1,11 @@
-import { FC, useState } from "react";
+import { FC } from "react";
 import { Paper, Typography } from "@mui/material";
 import css from "./styles.module.scss";
 import { IOrderProps } from "./types";
 import { formatPhoneNumberIntl } from "react-phone-number-input";
-import { CopyToClipboard } from "react-copy-to-clipboard";
-import ContentCopyOutlinedIcon from "@mui/icons-material/ContentCopyOutlined";
-import { IconButton } from "@mui/material";
-import { useSnackbar } from "../../providers/SnackbarProvider";
+import CopyPhoneNumberButton from "../CopyPhoneNumberButton";
 
 export const Order: FC<IOrderProps> = ({ agency, price }) => {
-  const [copied, setCopied] = useState<Record<string, boolean>>({});
-  const { showSnackbar } = useSnackbar();
-  const handleCopy = (phone: string) => {
-    showSnackbar("Номер скопирован", "success");
-    setCopied({ ...copied, [phone]: true });
-    setTimeout(() => setCopied({ ...copied, [phone]: false }), 2000);
-  };
-
   return (
     <Paper elevation={2} className={css.order}>
       <div className={css.columnLeft}>
@@ -31,11 +20,7 @@ export const Order: FC<IOrderProps> = ({ agency, price }) => {
                 <div className={css.orderPhone}>
                   {formatPhoneNumberIntl(phone)}
                 </div>
-                <CopyToClipboard text={phone} onCopy={() => handleCopy(phone)}>
-                  <IconButton>
-                    <ContentCopyOutlinedIcon />
-                  </IconButton>
-                </CopyToClipboard>
+                <CopyPhoneNumberButton phone={phone} />
               </div>
             ))
           ) : (
