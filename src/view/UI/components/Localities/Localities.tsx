@@ -7,20 +7,15 @@ import { Modal } from "../modal";
 import FormInput from "./FormInput";
 import { Control } from "react-hook-form";
 import { IFormData, TYPE_POINT } from "../../containers/SearchBlock/types";
-// import { CircularProgress } from "@mui/material";
 
 interface IProps {
-  // label: string;
   isOpen: boolean;
-  // closeInputLayer: () => void;
   setLocation: (locality: ILocalityEntity) => void;
-  // from: string | null;
   searchLocality: (event: string) => void;
   localities: ILocalityEntity[] | null;
   loading: boolean;
   closeModal: () => void;
   control: Control<IFormData>;
-  // loading: boolean;
   activePoint: TYPE_POINT;
 }
 
@@ -54,7 +49,6 @@ const Localities: React.FC<IProps> = ({
           <p>Ничего не найдено</p>
         </div>
       )}
-      <button onClick={closeModal}>pfrhsnm</button>
     </Modal>
   );
 };

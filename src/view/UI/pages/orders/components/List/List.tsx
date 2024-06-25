@@ -9,7 +9,8 @@ const List: FC<IListProps> = ({ list }) => {
     return (
       <Typography variant="h6" align="center">
         {/* TODO поставить картинку */}
-        По данному маршруту предложений не найдено
+        По данному маршруту
+        <br /> предложений не найдено
       </Typography>
     );
   }

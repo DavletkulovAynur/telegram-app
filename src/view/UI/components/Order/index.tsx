@@ -18,7 +18,7 @@ export const Order: FC<IOrderProps> = ({ agency, price }) => {
   };
 
   return (
-    <Paper elevation={3} className={css.order}>
+    <Paper elevation={2} className={css.order}>
       <div className={css.columnLeft}>
         <Typography variant="h6" align="left" className={css.orderTitle}>
           {agency.name}
@@ -32,9 +32,6 @@ export const Order: FC<IOrderProps> = ({ agency, price }) => {
                   {formatPhoneNumberIntl(phone)}
                 </div>
                 <CopyToClipboard text={phone} onCopy={() => handleCopy(phone)}>
-                  {/* <Button size="small" className={css.copyButton}>
-                    {copied[phone] ? "Скопировано" : "Копировать"}
-                  </Button> */}
                   <IconButton>
                     <ContentCopyOutlinedIcon />
                   </IconButton>
