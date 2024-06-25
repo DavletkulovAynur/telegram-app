@@ -6,11 +6,13 @@ import { formatPhoneNumberIntl } from "react-phone-number-input";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import ContentCopyOutlinedIcon from "@mui/icons-material/ContentCopyOutlined";
 import { IconButton } from "@mui/material";
+import { useSnackbar } from "../../providers/SnackbarProvider";
 
 export const Order: FC<IOrderProps> = ({ agency, price }) => {
   const [copied, setCopied] = useState<Record<string, boolean>>({});
-
+  const { showSnackbar } = useSnackbar();
   const handleCopy = (phone: string) => {
+    showSnackbar("Номер скопирован", "success");
     setCopied({ ...copied, [phone]: true });
     setTimeout(() => setCopied({ ...copied, [phone]: false }), 2000);
   };

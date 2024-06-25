@@ -10,6 +10,7 @@ import { ErrorBoundary } from "./pages/errorBoundaryPage";
 import Body from "./components/Body";
 import App from "./App.tsx";
 import { IAppInitConfig } from "./types.ts";
+import { SnackbarProvider } from "./providers/SnackbarProvider/SnackbarProvider.tsx";
 
 export const AppRoot: FC<{ themes: IAppInitConfig["themes"] }> = observer(
   ({ themes }) => {
@@ -30,9 +31,11 @@ export const AppRoot: FC<{ themes: IAppInitConfig["themes"] }> = observer(
           <CssBaseline />
           <StyledEngineProvider injectFirst>
             <ErrorBoundary>
-              <Body>
-                <App />
-              </Body>
+              <SnackbarProvider>
+                <Body>
+                  <App />
+                </Body>
+              </SnackbarProvider>
             </ErrorBoundary>
           </StyledEngineProvider>
         </ThemeProvider>
