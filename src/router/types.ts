@@ -6,7 +6,8 @@ export type IRoutes = [
   IHomeRoute,
   IOrdersRoute<IOrderRequestParams>,
   IProfileRoute,
-  ISettingRoute
+  ISettingRoute,
+  IEventRoute,
 ];
 
 export interface IRoute<P = Record<string, string>>
@@ -25,3 +26,4 @@ interface IHomeRoute extends IRoute {}
 interface IOrdersRoute<P> extends IRoute<P> {}
 interface IProfileRoute extends IRoute {}
 interface ISettingRoute extends IRoute {}
+interface IEventRoute extends IRoute {}
