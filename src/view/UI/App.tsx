@@ -10,6 +10,7 @@ const ProfilePage = lazy(() => import("./pages/profile"));
 const OrdersPage = lazy(() => import("./pages/orders"));
 const SettingPage = lazy(() => import("./pages/setting"));
 const NotFoundPage = lazy(() => import("./pages/notFound"));
+const EventPage = lazy(() => import("./pages/event"));
 
 export const App: FC = () => {
   const router = useRoute();
@@ -30,6 +31,9 @@ export const App: FC = () => {
       break;
     case ERouteNames.SETTING:
       page = <SettingPage />;
+      break;
+    case ERouteNames.EVENT:
+      page = <EventPage />;
       break;
 
     case constants.UNKNOWN_ROUTE:

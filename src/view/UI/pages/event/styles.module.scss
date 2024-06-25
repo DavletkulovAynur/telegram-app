@@ -1,0 +1,24 @@
+.container {
+  margin-top: 20px;
+}
+
+.content {
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 20px;
+  background-color: var(
+    --tg-theme-secondary-bg-color,
+    var(--yy-background-paper)
+  );
+}
+
+.cover {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+}
+
+.map {
+  border: none;
+  border-radius: 20px;
+}
