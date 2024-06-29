@@ -25,7 +25,6 @@ const OrderPageSearch: FC<IProps> = observer(({ onSearch, routeParams }) => {
 
   const { control, setValue, watch } = useForm<IFormData>({
     defaultValues: {
-      //FIXME: Изменить как обновим базy
       origin: { id: routeParams.originId, name: routeParams.originName },
       destination: {
         id: routeParams.destinationId,

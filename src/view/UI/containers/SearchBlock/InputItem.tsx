@@ -1,4 +1,3 @@
-
 import { FC } from "react";
 import css from "./styles.module.scss";
 import { POINT_PLACEHOLDER, TFormDataPoint, TPoint, TYPE_POINT } from "./types";
@@ -7,7 +6,7 @@ import Typewriter from "./Typewriter";
 interface IProps {
   openModal: (a: TPoint) => void;
   typePoint: TYPE_POINT;
-  point: TFormDataPoint,
+  point: TFormDataPoint;
   placeholderHTML: POINT_PLACEHOLDER;
 }
 
@@ -19,7 +18,9 @@ const InputItem: FC<IProps> = ({
 }) => {
   return (
     <div onClick={() => openModal(typePoint)} className={css.localityWrap}>
-      <span className={(point.id && css.localityName) || ""}>{point.id && point.name}</span>
+      <span className={(point.id && css.localityName) || ""}>
+        {point.id && point.name}
+      </span>
       {!point.id && typePoint === TYPE_POINT.origin && (
         <span className={css.notMarkedLocalityName}>{placeholderHTML}</span>
       )}
@@ -28,11 +29,11 @@ const InputItem: FC<IProps> = ({
           Куда&nbsp;-&nbsp;
           <Typewriter
             texts={[
+              "Красноусольский",
               "Сибай",
-              "Аъяр",
-              "Санкт-Петербург",
-              "Новосибирск",
-              "Екатеринбург",
+              "Акъяр",
+              "Малояз",
+              "Стерлитамак",
             ]}
             speed={100}
             pause={1000}
@@ -43,4 +44,4 @@ const InputItem: FC<IProps> = ({
   );
 };
 
-export default InputItem
+export default InputItem;
