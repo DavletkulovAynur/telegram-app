@@ -25,7 +25,7 @@ const SearchBlock: FC<IMobileFormProps> = observer(({ onSearch }) => {
   const { control, setValue, watch } = useForm<IFormData>({
     defaultValues: {
       //FIXME: Изменить как обновим базy
-      origin: { id: "2", name: "Уфа" },
+      origin: { id: "6", name: "Уфа" },
       destination: { id: null, name: "" },
     },
   });
