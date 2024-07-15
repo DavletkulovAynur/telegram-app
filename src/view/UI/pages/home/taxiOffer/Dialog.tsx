@@ -13,7 +13,8 @@ import { useForm, Controller } from "react-hook-form";
 import { TextField } from "@mui/material";
 
 import css from "./styles.module.scss";
-import { TOfferFormFields } from "./types";
+import { IAgencyOffer, useAgencyOffersApi } from "@/api/agencyOffers";
+
 const Transition = forwardRef(function Transition(
   props: TransitionProps & {
     children: React.ReactElement;
@@ -29,10 +30,12 @@ interface IProps {
 }
 const FullScreenDialog: FC<IProps> = ({ isOpen, closeDialog }) => {
   //FORM
-  const { control, handleSubmit } = useForm<TOfferFormFields>();
+  const { control, handleSubmit } = useForm<IAgencyOffer>();
+  // API
+  const { addAgencyOffer } = useAgencyOffersApi();
 
-  const sendData = (data: TOfferFormFields) => {
-    console.log("test", data);
+  const sendData = (offer: IAgencyOffer) => {
+    addAgencyOffer.mutate(offer);
   };
 
   return (

@@ -11,6 +11,7 @@ import Body from "./components/Body";
 import App from "./App.tsx";
 import { IAppInitConfig } from "./types.ts";
 import { SnackbarProvider } from "./providers/SnackbarProvider/SnackbarProvider.tsx";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 export const AppRoot: FC<{ themes: IAppInitConfig["themes"] }> = observer(
   ({ themes }) => {
@@ -23,22 +24,27 @@ export const AppRoot: FC<{ themes: IAppInitConfig["themes"] }> = observer(
 
     const [lightTheme, darkTheme] = themes;
 
+    // Создание экземпляра QueryClient
+    const queryClient = new QueryClient();
+
     return (
       <StrictMode>
-        <ThemeProvider
-          theme={tg?.colorScheme === "dark" ? darkTheme : lightTheme}
-        >
-          <CssBaseline />
-          <StyledEngineProvider injectFirst>
-            <ErrorBoundary>
-              <SnackbarProvider>
-                <Body>
-                  <App />
-                </Body>
-              </SnackbarProvider>
-            </ErrorBoundary>
-          </StyledEngineProvider>
-        </ThemeProvider>
+        <QueryClientProvider client={queryClient}>
+          <ThemeProvider
+            theme={tg?.colorScheme === "dark" ? darkTheme : lightTheme}
+          >
+            <CssBaseline />
+            <StyledEngineProvider injectFirst>
+              <ErrorBoundary>
+                <SnackbarProvider>
+                  <Body>
+                    <App />
+                  </Body>
+                </SnackbarProvider>
+              </ErrorBoundary>
+            </StyledEngineProvider>
+          </ThemeProvider>
+        </QueryClientProvider>
       </StrictMode>
     );
   },
