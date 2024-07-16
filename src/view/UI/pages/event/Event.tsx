@@ -52,8 +52,8 @@ const Event: FC = observer(() => {
           </p>
 
           <div className={css.phoneContainer}>
-            <div className={css.phone}>+7 929 579 77 80</div>
-            <CopyPhoneNumberButton phone={"7 929 579 77 80"} />
+            <div className={css.phone}>+7 965 668 44 20</div>
+            <CopyPhoneNumberButton phone={"+7 965 668 44 20"} />
           </div>
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d45485.31448249802!2d56.789331955979016!3d54.154643909665104!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x43d9bb4a918c017b%3A0xa3302cd4c5892f08!2z0KHQutCw0LvQsCDQo9C60LvRiyDQmtCw0Y8!5e0!3m2!1sru!2sar!4v1719332548806!5m2!1sru!2sar"
