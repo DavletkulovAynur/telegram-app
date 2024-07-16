@@ -1,10 +1,11 @@
-import axios from 'axios';
+import { CONSTANTS } from "@/constants";
+import axios from "axios";
 
 //БАЗОВЫЙ URL
 const base = axios.create({
-  baseURL: 'https://jsonplaceholder.typicode.com',
+  baseURL: CONSTANTS.prodBaseUrl,
   headers: {
-    'Content-Type': 'application/json',
+    "Content-Type": "application/json",
   },
 });
 

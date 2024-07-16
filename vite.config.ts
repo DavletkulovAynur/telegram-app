@@ -3,6 +3,7 @@ import react from "@vitejs/plugin-react";
 import { createHtmlPlugin } from "vite-plugin-html";
 import { vitePwaConfig } from "./vite.pwa.config";
 import { IViteConfigParams } from "./vite.config.types";
+import path from "path";
 
 export default ({ mode }) => {
   const params: IViteConfigParams = {
@@ -19,6 +20,11 @@ export default ({ mode }) => {
       }),
       vitePwaConfig(params),
     ],
+    resolve: {
+      alias: {
+        "@": path.resolve(__dirname, "src"),
+      },
+    },
     build: {
       outDir: params.outDir,
       emptyOutDir: true,
