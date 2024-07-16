@@ -47,3 +47,12 @@
 .inputWrap {
   margin-bottom: 16px;
 }
+
+.testInput {
+  border-radius: 4px;
+  width: 100%;
+
+  input {
+    padding: 8.5px 14px;
+  }
+}

@@ -3,6 +3,8 @@ import { useRoute } from "react-router5";
 import { constants } from "router5";
 import { LoadingScreen } from "./components/LoadingScreen";
 import { ERouteNames } from "../../router/routes";
+//TODO: может быть нужно будет выносить 
+import "react-phone-number-input/style.css";
 import "./style.css";
 
 const HomePage = lazy(() => import("./pages/home"));
