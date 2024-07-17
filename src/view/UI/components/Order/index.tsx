@@ -38,7 +38,7 @@ export const Order: FC<IOrderProps> = ({ agency, price }) => {
 
       <div className={css.columnRight}>
         {price ? (
-          <Typography variant="h6">{price} ₽</Typography>
+          <Typography className={css.orderPrice} variant="h6">{price} ₽</Typography>
         ) : (
           <Typography variant="subtitle2" color="text.secondary">
             Цена не указана
