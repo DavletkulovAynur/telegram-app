@@ -25,7 +25,7 @@ const SearchBlock: FC<IMobileFormProps> = observer(({ onSearch }) => {
   const { control, setValue, watch } = useForm<IFormData>({
     defaultValues: {
       //FIXME: Изменить как обновим базy
-      origin: { id: "6", name: "Уфа" },
+      origin: { id: "1", name: "Уфа" },
       destination: { id: null, name: "" },
     },
   });
@@ -36,7 +36,12 @@ const SearchBlock: FC<IMobileFormProps> = observer(({ onSearch }) => {
   useEffect(() => {
     if (origin.id && destination.id) {
       //тут запускаем первый раз
-      onSearch({ originId: origin.id, destinationId: destination.id, originName: origin.name, destinationName: destination.name });
+      onSearch({
+        originId: origin.id,
+        destinationId: destination.id,
+        originName: origin.name,
+        destinationName: destination.name,
+      });
     }
   }, [origin.id, destination.id]);
 
